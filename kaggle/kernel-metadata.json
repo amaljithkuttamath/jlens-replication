@@ -1,0 +1,16 @@
+{
+  "id": "amaljithkuttamath/jlens-qwen-3-6-4b",
+  "id_no": null,
+  "title": "J-lens Qwen 3.6-4B",
+  "code_file": "kaggle_run.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_tpu": false,
+  "enable_internet": true,
+  "dataset_sources": [],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}

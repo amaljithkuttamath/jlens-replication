@@ -1,0 +1,42 @@
+[project]
+name = "jlens-replication"
+version = "0.1.0"
+description = "Replicating Anthropic's Jacobian lens on small open-weight models using free compute."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+authors = [{ name = "amaljithkuttamath" }]
+dependencies = [
+    # Kaggle CLI + local orchestration only. The GPU-heavy deps
+    # (torch, transformers, jlens itself) are installed inside the Kaggle
+    # kernel at run time — see notebooks/kaggle_run.ipynb.
+    "kaggle>=1.6.17",
+    "huggingface_hub>=0.24",
+    "pyyaml>=6",
+    "rich>=13",
+]
+
+[project.optional-dependencies]
+# For running the fit locally (needs a GPU). Not needed for Kaggle orchestration.
+gpu = [
+    "torch>=2.4",
+    "transformers>=5.5",
+    "datasets>=2.20",
+    "safetensors>=0.4",
+    "jlens @ git+https://github.com/anthropics/jacobian-lens.git",
+]
+dev = ["pytest", "ruff"]
+
+[project.scripts]
+jlens-kaggle = "scripts.kaggle_orchestrator:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["scripts"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"

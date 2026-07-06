@@ -102,7 +102,42 @@ jlens-replication/
 
 ---
 
-## Quickstart (Kaggle T4×2)
+## Scheduled remote run (uv + Kaggle CLI)
+
+This repo is set up for hands-off runs: `uv` manages the local toolchain, the `kaggle` CLI pushes a self-contained notebook to Kaggle, and a small orchestrator polls for completion and pulls the results.
+
+**One-time setup (local machine):**
+
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh          # install uv
+git clone https://github.com/amaljithkuttamath/jlens-replication.git
+cd jlens-replication
+uv sync                                                  # installs kaggle, huggingface_hub, rich, pyyaml
+
+# Kaggle token: go to https://www.kaggle.com/settings → Create New Token,
+# then drop kaggle.json at ~/.kaggle/kaggle.json (chmod 600).
+```
+
+**Kick off a run:**
+
+```bash
+uv run jlens-kaggle push          # uploads kaggle/kaggle_run.ipynb → Kaggle
+uv run jlens-kaggle status        # peek at run state
+uv run jlens-kaggle fetch         # if complete, pulls outputs into ./out/
+
+# or, all-in-one blocking:
+./scripts/kaggle_run.sh
+```
+
+Outputs land in `out/`:
+
+- `qwen-3.6-4b-jlens.pt` — the fitted Jacobian lens
+- `eval_results.json` — pass@{1,5,10} across the six lens-quality evaluations
+- `probe_readouts.json` — sanity-check top-5 readouts for three probes
+
+---
+
+## Manual quickstart (Kaggle T4×2)
 
 1. Create a new Kaggle notebook, set accelerator to **T4×2**, internet **on**.
 2. Add your HuggingFace token as a Kaggle secret named `HF_TOKEN` (needed only for gated models like Llama).
