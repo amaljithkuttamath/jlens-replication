@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.venv/
+.env
+out/
+results/*.json
+!results/.gitkeep
+*.pt
+*.safetensors
+*.ckpt.pt
+.ipynb_checkpoints/
+jacobian-lens/

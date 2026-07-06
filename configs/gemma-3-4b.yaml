@@ -1,0 +1,13 @@
+model: google/gemma-3-4b-pt
+n: 25
+max_seq_len: 128
+skip_first: 4
+target_layer: -2
+dim_batch: 4
+dtype: bfloat16
+attn: sdpa
+compile: true
+notes: |
+  Gemma-3 uses the Gemma license (permissive but not OSI-open). Multimodal
+  wrapper — the jlens HF layout table already covers this via
+  Layout("model.language_model").

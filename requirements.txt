@@ -1,0 +1,8 @@
+torch>=2.4
+transformers>=5.5
+huggingface_hub>=0.24
+datasets>=2.20
+safetensors>=0.4
+numpy
+# Install the upstream jlens package from source in the notebook / setup step:
+#   pip install -e ./jacobian-lens

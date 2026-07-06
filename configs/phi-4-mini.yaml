@@ -1,0 +1,12 @@
+model: microsoft/Phi-4-mini-instruct
+n: 25
+max_seq_len: 128
+skip_first: 4
+target_layer: -2
+dim_batch: 4
+dtype: bfloat16
+attn: sdpa
+compile: true
+notes: |
+  Phi uses a different norm attribute name (final_layernorm) — already handled
+  by the Phi Layout in jlens.hf._LAYOUTS. MIT-licensed.

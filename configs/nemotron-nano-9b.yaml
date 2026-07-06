@@ -1,0 +1,15 @@
+model: nvidia/Nemotron-Nano-9B-v2
+n: 10                # start smaller for the 9B
+max_seq_len: 128
+skip_first: 4
+target_layer: -2
+dim_batch: 2         # T4 fp16 is tight; go 4 on L4 24GB
+dtype: bfloat16
+attn: sdpa
+compile: true
+notes: |
+  NVIDIA's small open model. Fits on Kaggle T4x2 (32 GB) in bf16 at
+  dim_batch=2. On a single T4 you'll need 4-bit quantization (bitsandbytes)
+  which slightly degrades the Jacobian but should still produce a usable
+  lens. This is the biggest gap in the public J-lens replication landscape —
+  no Nemotron J-lens exists as of July 6, 2026.

@@ -1,0 +1,13 @@
+model: Qwen/Qwen3.6-4B
+n: 25
+max_seq_len: 128
+skip_first: 4
+target_layer: -2
+dim_batch: 4
+dtype: bfloat16
+attn: sdpa
+compile: true
+notes: |
+  Paper-faithful recipe following Neel Nanda's Qwen 27B replication.
+  Fits on a single T4 in ~30 min. Best starting point for a new user —
+  Apache 2.0 license, no gating.
