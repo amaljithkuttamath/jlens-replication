@@ -1,5 +1,8 @@
 # J-lens replication on small open-weight models
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/amaljithkuttamath/jlens-replication/blob/main/notebooks/02_fit_colab.ipynb)
+
+
 A minimal, free-compute replication of Anthropic's July 2026 paper
 **["Verbalizable Representations Form a Global Workspace in Language Models"](https://transformer-circuits.pub/2026/workspace/index.html)**
 (blog post: [A global workspace in language models](https://www.anthropic.com/research/global-workspace)).
@@ -99,6 +102,36 @@ jlens-replication/
 ├── results/                      # eval outputs go here; commit the JSONs
 └── requirements.txt
 ```
+
+---
+
+## One-click run on free compute
+
+### Google Colab (recommended — free T4 GPU)
+
+Click the badge at the top of this README (or [open the notebook directly](https://colab.research.google.com/github/amaljithkuttamath/jlens-replication/blob/main/notebooks/02_fit_colab.ipynb)):
+
+1. Set runtime to **T4 GPU** (`Runtime` → `Change runtime type`)
+2. `Runtime` → `Run all`
+3. Wait ~25-40 min — outputs auto-download when the last cell runs
+
+Model: **Qwen/Qwen2.5-3B-Instruct** (fits in 15 GB VRAM at bf16). Colab's preinstalled PyTorch supports T4 (sm_75), so no exotic install steps are needed.
+
+### Lightning AI (L4 24 GB, free credits)
+
+Sign up at [lightning.ai](https://lightning.ai), verify phone, get 15 credits/month (≈80 GPU-hours on interruptible). Then:
+
+```bash
+git clone https://github.com/amaljithkuttamath/jlens-replication.git
+cd jlens-replication
+python notebooks/03_fit_lightning.py
+```
+
+~15-25 min on L4. Outputs in `./out/`.
+
+### Kaggle — NOT recommended for this workflow
+
+Kaggle's default accelerator is Tesla P100 (compute capability 6.0), which was dropped by PyTorch after 2.4. Modern `transformers` requires newer torch APIs, creating a hard version conflict. If you insist on Kaggle, manually select **GPU T4x2** in the notebook's Settings sidebar — the API push does not honor accelerator overrides.
 
 ---
 
