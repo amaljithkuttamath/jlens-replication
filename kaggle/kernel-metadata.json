@@ -1,7 +1,7 @@
 {
-  "id": "amaljithkuttamath/jlens-qwen-3-6-4b",
+  "id": "amaljithkuttamath/jacobian-lens-qwen-replication",
   "id_no": null,
-  "title": "J-lens Qwen 3.6-4B",
+  "title": "Jacobian Lens Qwen Replication",
   "code_file": "kaggle_run.ipynb",
   "language": "python",
   "kernel_type": "notebook",
