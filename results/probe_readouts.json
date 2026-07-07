@@ -1,0 +1,722 @@
+{
+  "The number of legs on the animal that spins webs is": {
+    "0": [
+      "webs",
+      "webs",
+      "/Web",
+      "@Web",
+      ""
+    ],
+    "1": [
+      "",
+      "",
+      "webs",
+      "@Web",
+      "webs"
+    ],
+    "2": [
+      "",
+      "",
+      "webs",
+      "",
+      "@Web"
+    ],
+    "3": [
+      "",
+      "webs",
+      "...",
+      "",
+      "/web"
+    ],
+    "4": [
+      "",
+      "",
+      "...",
+      "webs",
+      "..."
+    ],
+    "5": [
+      "/web",
+      "webs",
+      "(Web",
+      "(web",
+      "/Web"
+    ],
+    "6": [
+      "",
+      "/web",
+      "",
+      "<br",
+      "<!--"
+    ],
+    "7": [
+      "/web",
+      "...",
+      "...",
+      "/Web",
+      "(web"
+    ],
+    "8": [
+      "webs",
+      "/web",
+      "/Web",
+      "(Web",
+      "@Web"
+    ],
+    "9": [
+      "webs",
+      "/web",
+      "/Web",
+      "@Web",
+      "(Web"
+    ],
+    "10": [
+      "webs",
+      "/Web",
+      "@Web",
+      "/web",
+      "webs"
+    ],
+    "11": [
+      "webs",
+      "/web",
+      "--",
+      "____",
+      "/Web"
+    ],
+    "12": [
+      "webs",
+      "spiders",
+      "webs",
+      "/web",
+      "spider"
+    ],
+    "13": [
+      "spiders",
+      "webs",
+      "spider",
+      "webs",
+      "Spider"
+    ],
+    "14": [
+      "spiders",
+      "spider",
+      "webs",
+      "Spider",
+      "Spider"
+    ],
+    "15": [
+      "spiders",
+      "spider",
+      "webs",
+      "Spider",
+      "Spider"
+    ],
+    "16": [
+      "spiders",
+      "spider",
+      "webs",
+      "Spider",
+      "Spider"
+    ],
+    "17": [
+      "spiders",
+      "spider",
+      "webs",
+      "Spider",
+      "Spider"
+    ],
+    "18": [
+      "spiders",
+      "spider",
+      "webs",
+      "Spider",
+      "Spider"
+    ],
+    "19": [
+      "spiders",
+      "spider",
+      "webs",
+      "Spider",
+      "Spider"
+    ],
+    "20": [
+      "spiders",
+      "spider",
+      "\u6606\u866b",
+      "webs",
+      "Spider"
+    ],
+    "21": [
+      "spiders",
+      "spider",
+      "\u6606\u866b",
+      "Spider",
+      "webs"
+    ],
+    "22": [
+      "spiders",
+      "\u6606\u866b",
+      "spider",
+      "webs",
+      "Spider"
+    ],
+    "23": [
+      "spiders",
+      "webs",
+      "spider",
+      "\u6606\u866b",
+      "\u8718\u86db"
+    ],
+    "24": [
+      "spiders",
+      "spider",
+      "\u8718\u86db",
+      "webs",
+      "\u6606\u866b"
+    ],
+    "25": [
+      "spiders",
+      "\u8718\u86db",
+      "\u6606\u866b",
+      "Spider",
+      "spider"
+    ],
+    "26": [
+      "spiders",
+      "\u8718\u86db",
+      "\u6606\u866b",
+      "Spider",
+      "spider"
+    ],
+    "27": [
+      "spiders",
+      "\uff1f",
+      "\u8718\u86db",
+      "webs",
+      "____"
+    ],
+    "28": [
+      "spiders",
+      "\uff1f",
+      "____",
+      "\u8718\u86db",
+      "____"
+    ],
+    "29": [
+      "spiders",
+      "____",
+      "____",
+      "(___",
+      "\u8718\u86db"
+    ],
+    "30": [
+      "<!--",
+      "spiders",
+      "____",
+      "webs",
+      "____"
+    ],
+    "31": [
+      "<!--",
+      "<!--",
+      "____",
+      "(${",
+      "____"
+    ],
+    "32": [
+      "webs",
+      "is",
+      "would",
+      "(web",
+      "spiders"
+    ],
+    "33": [
+      "is",
+      "would",
+      "must",
+      "indoors",
+      "resembles"
+    ]
+  },
+  "The capital of the country shaped like a boot is": {
+    "0": [
+      "-boot",
+      "/boot",
+      "boot",
+      "`_",
+      "boot"
+    ],
+    "1": [
+      "-boot",
+      "boot",
+      "/boot",
+      "boot",
+      "`_"
+    ],
+    "2": [
+      "-boot",
+      "`_",
+      "**",
+      "/boot",
+      "\\`"
+    ],
+    "3": [
+      "-boot",
+      "/boot",
+      "**",
+      "\\`",
+      "boot"
+    ],
+    "4": [
+      "\\`",
+      "-boot",
+      "**",
+      "`_",
+      "/boot"
+    ],
+    "5": [
+      "**",
+      "`_",
+      "-boot",
+      "(`",
+      "\\`"
+    ],
+    "6": [
+      "**",
+      "`_",
+      "(`",
+      "`\\",
+      "[`"
+    ],
+    "7": [
+      "**",
+      "`_",
+      "(`",
+      "[`",
+      "`\\"
+    ],
+    "8": [
+      "`_",
+      "**",
+      "-boot",
+      "(`",
+      "\\`"
+    ],
+    "9": [
+      "\\`",
+      "[`",
+      "`_",
+      "`\\",
+      "(`"
+    ],
+    "10": [
+      "(`",
+      "`\\",
+      "[`",
+      "\\`",
+      "`_"
+    ],
+    "11": [
+      "`\\",
+      "-boot",
+      "`_",
+      "(`",
+      "[`"
+    ],
+    "12": [
+      "-boot",
+      "`\\",
+      "boot",
+      "/boot",
+      "`_"
+    ],
+    "13": [
+      "-boot",
+      "`\\",
+      "\\`",
+      "/boot",
+      "boot"
+    ],
+    "14": [
+      "-boot",
+      "`\\",
+      "/boot",
+      "boot",
+      "(`"
+    ],
+    "15": [
+      "-boot",
+      "`\\",
+      "(`",
+      "/boot",
+      "boot"
+    ],
+    "16": [
+      "-boot",
+      ".debian",
+      "/boot",
+      "boot",
+      "(`"
+    ],
+    "17": [
+      "-boot",
+      ".debian",
+      "boot",
+      "/boot",
+      "-foot"
+    ],
+    "18": [
+      ".debian",
+      "-boot",
+      "`\\",
+      "(`",
+      "/boot"
+    ],
+    "19": [
+      "-boot",
+      "Colombian",
+      ".debian",
+      "Colombia",
+      "Ecuador"
+    ],
+    "20": [
+      ".debian",
+      "-boot",
+      "(`",
+      "\\_",
+      "`\\"
+    ],
+    "21": [
+      ".debian",
+      "(`",
+      "-country",
+      "-boot",
+      "Italy"
+    ],
+    "22": [
+      ".debian",
+      "-country",
+      "(`",
+      "-boot",
+      "Italy"
+    ],
+    "23": [
+      "-country",
+      "Italy",
+      ".debian",
+      "Spain",
+      "Germany"
+    ],
+    "24": [
+      "Italy",
+      "Germany",
+      "Spain",
+      "Spain",
+      ".debian"
+    ],
+    "25": [
+      "Germany",
+      "Italy",
+      "\u5fb7\u56fd",
+      "Germany",
+      "Spain"
+    ],
+    "26": [
+      "Italy",
+      "\u610f\u5927\u5229",
+      "Italian",
+      "italian",
+      "Italy"
+    ],
+    "27": [
+      "Italy",
+      "Italy",
+      "\u610f\u5927\u5229",
+      "Italian",
+      "Spain"
+    ],
+    "28": [
+      "____",
+      "Italy",
+      "____",
+      "\u610f\u5927\u5229",
+      "Italy"
+    ],
+    "29": [
+      "____",
+      "____",
+      "Italy",
+      "(__",
+      "(__"
+    ],
+    "30": [
+      "____",
+      "____",
+      "Italy",
+      "is",
+      "belongs"
+    ],
+    "31": [
+      "is",
+      "Italy",
+      "\u9774",
+      "occupies",
+      "belongs"
+    ],
+    "32": [
+      "is",
+      "occupies",
+      "lies",
+      "belongs",
+      "Italy"
+    ],
+    "33": [
+      "is",
+      "lies",
+      "sits",
+      "belongs",
+      "occupies"
+    ]
+  },
+  "Fact: The currency used in the country whose flag has a red maple leaf is the": {
+    "0": [
+      ":",
+      "**",
+      "```",
+      "``",
+      ":"
+    ],
+    "1": [
+      "\u2026",
+      "",
+      "..",
+      "",
+      "..."
+    ],
+    "2": [
+      "\u2026",
+      "",
+      "[\u2026",
+      "",
+      "..."
+    ],
+    "3": [
+      "\u2026",
+      "\u2026",
+      "[\u2026",
+      "",
+      "..."
+    ],
+    "4": [
+      "",
+      "",
+      "``",
+      "\u2026",
+      "..."
+    ],
+    "5": [
+      "",
+      "`",
+      "``",
+      "",
+      "`"
+    ],
+    "6": [
+      "",
+      "",
+      "``",
+      "\u00ab",
+      "```"
+    ],
+    "7": [
+      "\u00ab",
+      "``",
+      "\u2026",
+      "\u2013",
+      "\u2026"
+    ],
+    "8": [
+      "``",
+      "`$",
+      "$",
+      "$$",
+      "```"
+    ],
+    "9": [
+      "```",
+      "`$",
+      "`'",
+      "``",
+      "\u00ab"
+    ],
+    "10": [
+      "\u00ab",
+      "\u2026",
+      "[\u2026]",
+      "[\u2026",
+      "\ufffd"
+    ],
+    "11": [
+      "$$",
+      "\u2026",
+      "\u2026",
+      "[\u2026]",
+      "\u00ab"
+    ],
+    "12": [
+      "$$",
+      "Currency",
+      "currencies",
+      "\u4eba\u6c11\u5e01",
+      "currency"
+    ],
+    "13": [
+      "Currency",
+      "currency",
+      ".Currency",
+      "currencies",
+      "Currency"
+    ],
+    "14": [
+      "currencies",
+      "currency",
+      "Currency",
+      ".Currency",
+      "Currency"
+    ],
+    "15": [
+      "currencies",
+      ".Currency",
+      "currency",
+      "Currency",
+      "\u8d27\u5e01"
+    ],
+    "16": [
+      "currencies",
+      "Currency",
+      "currency",
+      ".Currency",
+      "\u4eba\u6c11\u5e01"
+    ],
+    "17": [
+      ".Currency",
+      "Currency",
+      "currencies",
+      "currency",
+      "dollars"
+    ],
+    "18": [
+      "Currency",
+      ".Currency",
+      "currencies",
+      "currency",
+      "Currency"
+    ],
+    "19": [
+      ".Currency",
+      "Currency",
+      "currencies",
+      "Currency",
+      "\u7f8e\u5143"
+    ],
+    "20": [
+      ".Currency",
+      "Currency",
+      "\u7f8e\u5143",
+      "\u4eba\u6c11\u5e01",
+      "Currency"
+    ],
+    "21": [
+      "\u7f8e\u5143",
+      ".Currency",
+      "Currency",
+      "Currency",
+      "\u4eba\u6c11\u5e01"
+    ],
+    "22": [
+      "\u7f8e\u5143",
+      ".Currency",
+      "\u4eba\u6c11\u5e01",
+      "currencies",
+      "Currency"
+    ],
+    "23": [
+      ".Currency",
+      "\u7f8e\u5143",
+      "Currency",
+      "\u4eba\u6c11\u5e01",
+      "currencies"
+    ],
+    "24": [
+      ".Currency",
+      "\u7f8e\u5143",
+      "Currency",
+      "Currency",
+      "\u4eba\u6c11\u5e01"
+    ],
+    "25": [
+      ".Currency",
+      "Currency",
+      "\u7f8e\u5143",
+      "Currency",
+      "\u4eba\u6c11\u5e01"
+    ],
+    "26": [
+      "\u7f8e\u5143",
+      "Currency",
+      ".Currency",
+      "Countries",
+      "Currency"
+    ],
+    "27": [
+      "\u52a0\u62ff\u5927",
+      "Canada",
+      "Canadian",
+      "\u52a0\u62ff",
+      "Canadians"
+    ],
+    "28": [
+      "\u52a0\u62ff\u5927",
+      "Currency",
+      "Canada",
+      ".Currency",
+      "currency"
+    ],
+    "29": [
+      "\u52a0\u62ff\u5927",
+      "Currency",
+      "Canada",
+      "currency",
+      "Canadian"
+    ],
+    "30": [
+      "called",
+      "currency",
+      "called",
+      "\u8d27\u5e01",
+      "\u7f8e\u5143"
+    ],
+    "31": [
+      "called",
+      "called",
+      "Called",
+      "\u53eb\u505a",
+      "currency"
+    ],
+    "32": [
+      "currency",
+      "Canadian",
+      "dollar",
+      "Currency",
+      "dollars"
+    ],
+    "33": [
+      "Canadian",
+      "called",
+      "Canada",
+      "currency",
+      "\u52a0\u62ff\u5927"
+    ]
+  }
+}

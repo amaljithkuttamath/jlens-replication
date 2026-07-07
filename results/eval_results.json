@@ -1,0 +1,60 @@
+{
+  "model": "Qwen/Qwen2.5-3B-Instruct",
+  "n_prompts": 25,
+  "results": [
+    {
+      "eval": "lens-eval-association",
+      "n_items_scored": 99,
+      "pass_at_k": {
+        "pass@1": 0.0,
+        "pass@5": 0.0,
+        "pass@10": 0.010101010101010102
+      }
+    },
+    {
+      "eval": "lens-eval-multihop",
+      "n_items_scored": 84,
+      "pass_at_k": {
+        "pass@1": 0.15476190476190477,
+        "pass@5": 0.3333333333333333,
+        "pass@10": 0.4226190476190476
+      }
+    },
+    {
+      "eval": "lens-eval-multilingual",
+      "n_items_scored": 107,
+      "pass_at_k": {
+        "pass@1": 0.18613707165109036,
+        "pass@5": 0.33566978193146413,
+        "pass@10": 0.4010903426791277
+      }
+    },
+    {
+      "eval": "lens-eval-order-ops",
+      "n_items_scored": 55,
+      "pass_at_k": {
+        "pass@1": 0.02727272727272727,
+        "pass@5": 0.08181818181818182,
+        "pass@10": 0.14545454545454545
+      }
+    },
+    {
+      "eval": "lens-eval-poetry",
+      "n_items_scored": 98,
+      "pass_at_k": {
+        "pass@1": 0.23469387755102042,
+        "pass@5": 0.40816326530612246,
+        "pass@10": 0.5510204081632653
+      }
+    },
+    {
+      "eval": "lens-eval-typo",
+      "n_items_scored": 96,
+      "pass_at_k": {
+        "pass@1": 0.20833333333333334,
+        "pass@5": 0.4270833333333333,
+        "pass@10": 0.5416666666666666
+      }
+    }
+  ]
+}
