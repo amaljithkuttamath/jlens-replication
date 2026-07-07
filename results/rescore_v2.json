@@ -1,0 +1,15 @@
+{
+  "model": "Qwen/Qwen2.5-3B-Instruct",
+  "n_prompts_lens_was_fit_on": 25,
+  "target_layer": -2,
+  "readout_position": -1,
+  "notes": "Re-scoring only. Same fitted lens as v9 run. Compares 'original' (buggy: intermediates[0] only) vs 'all_intermediates' (fixed: score every element).",
+  "lens-eval-multilingual": {
+    "original":         {"n_items_scored": 93,  "n_multitoken_dropped": 14, "pass@1": 0.0215, "pass@5": 0.0753, "pass@10": 0.1183},
+    "all_intermediates":{"n_items_scored": 107, "n_multitoken_dropped": 14, "pass@1": 0.1861, "pass@5": 0.3380, "pass@10": 0.4011}
+  },
+  "lens-eval-order-ops": {
+    "original":         {"n_items_scored": 33, "n_multitoken_dropped": 22, "pass@1": 0.0909, "pass@5": 0.2727, "pass@10": 0.4242},
+    "all_intermediates":{"n_items_scored": 55, "n_multitoken_dropped": 22, "pass@1": 0.0273, "pass@5": 0.0818, "pass@10": 0.1455}
+  }
+}
