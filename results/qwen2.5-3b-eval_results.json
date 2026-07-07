@@ -1,0 +1,62 @@
+{
+  "model": "Qwen/Qwen2.5-3B-Instruct",
+  "n_prompts": 25,
+  "n_layers": 36,
+  "d_model": 2048,
+  "peak_vram_gb": 7.17,
+  "fit_wall_minutes": 227.9,
+  "target_layer": -2,
+  "max_seq_len": 96,
+  "dim_batch": 2,
+  "skip_first": 4,
+  "results": [
+    {
+      "eval": "lens-eval-association",
+      "pass_at_k": {
+        "pass@1": 0.0,
+        "pass@5": 0.0,
+        "pass@10": 0.0101
+      }
+    },
+    {
+      "eval": "lens-eval-multihop",
+      "pass_at_k": {
+        "pass@1": 0.155,
+        "pass@5": 0.333,
+        "pass@10": 0.423
+      }
+    },
+    {
+      "eval": "lens-eval-multilingual",
+      "pass_at_k": {
+        "pass@1": 0.186,
+        "pass@5": 0.336,
+        "pass@10": 0.401
+      }
+    },
+    {
+      "eval": "lens-eval-order-ops",
+      "pass_at_k": {
+        "pass@1": 0.027,
+        "pass@5": 0.082,
+        "pass@10": 0.145
+      }
+    },
+    {
+      "eval": "lens-eval-poetry",
+      "pass_at_k": {
+        "pass@1": 0.235,
+        "pass@5": 0.408,
+        "pass@10": 0.551
+      }
+    },
+    {
+      "eval": "lens-eval-typo",
+      "pass_at_k": {
+        "pass@1": 0.208,
+        "pass@5": 0.427,
+        "pass@10": 0.542
+      }
+    }
+  ]
+}
