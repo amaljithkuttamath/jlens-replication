@@ -1,6 +1,6 @@
-# J-lens on small open-weight models
+# J-lens on small open-weight models — a null-heavy replication
 
-> **A weekend replication of Anthropic's July 2026 interpretability paper — on two open-source models, using free Kaggle compute. Uncovered a real methodological caveat on the original technique.**
+> **Attempted replication of Anthropic's July 2026 Jacobian lens paper on two open-weight models using free Kaggle compute. After running the paper's own control experiments, the passive-readout probing story does not hold up. Only one of four tests passes cleanly.**
 
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/amaljithkuttamath/jlens-replication/blob/main/notebooks/02_fit_colab.ipynb)
 
@@ -8,140 +8,146 @@
 
 ## TL;DR
 
-Anthropic published *[Verbalizable Representations Form a Global Workspace in Language Models](https://transformer-circuits.pub/2026/workspace/index.html)* on July 6, 2026. They open-sourced the [Jacobian lens (J-lens)](https://github.com/anthropics/jacobian-lens) — a technique for reading a model's mid-computation "workspace" in vocabulary space.
+Anthropic published *[Verbalizable Representations Form a Global Workspace in Language Models](https://transformer-circuits.pub/2026/workspace/index.html)* (2026-07-06) and open-sourced the [Jacobian lens code](https://github.com/anthropics/jacobian-lens). External replication so far: Neel Nanda (Google DeepMind) on Qwen 3.6-27B, qualitative verdicts only, no public numbers.
 
-The only external replication was on **Qwen 3.6-27B** (Neel Nanda / MATS). Nobody had asked: *does this work on the small open models most people can actually run?*
+I ran the full method on **Qwen 2.5-3B-Instruct** and **Gemma-4-E2B-it** on Kaggle T4s. Four tests total: (1) MRR probing on the 6 lens-quality evals, (2) causal-swap intervention, (3) prompt-truncation ablation on sanity probes, (4) shuffled-corpus control lens.
 
-I ran it end-to-end on two:
+**Results:**
 
-| Model | Params | Architecture | Compute | Wall time | Result |
-|---|---|---|---|---|---|
-| Qwen 2.5-3B-Instruct | 3B | dense SDPA | Kaggle T4 (free) | 228 min | ✅ Workspace visible, wide band |
-| Gemma-4-E2B-it | 2B | **PLE + hybrid attention** | Kaggle T4 (free) | 106 min | ⚠️ Workspace barely visible — but evals *better* |
-
-**Total spend: $0.** Both experiments reproducible from the notebooks in this repo.
-
-## The interesting finding
-
-Gemma-4-E2B **outperforms Qwen 2.5-3B on 3 of 6 evaluations** despite being 33% smaller by parameter count:
-
-| Eval (pass@10) | Qwen 2.5-3B | Gemma-4-E2B | Δ |
+| Test | What it tests | Qwen 2.5-3B | Gemma-4-E2B |
 |---|---|---|---|
-| poetry (rhyme planning) | 0.551 | **0.816** | **+0.265** |
-| multihop (intermediate facts) | 0.423 | **0.571** | **+0.148** |
-| order-of-operations | 0.145 | **0.345** | **+0.200** |
-| typo detection | 0.542 | 0.479 | −0.063 |
-| multilingual | 0.401 | 0.367 | −0.034 |
-| association (abstract) | 0.010 | 0.010 | tie (floor) |
+| MRR probing | passive concept rank in vocab space | scores present but **falsified by shuffled control** | same |
+| Causal swap (Δlog-prob) | is the concept used by the model? | **+0.015 to +0.068** (no effect) | **-6.35 (multihop), -3.69 (multilingual)** (large effects) |
+| Prompt truncation | does concept require semantic prompt? | ✅ concept 0/34 layers on truncated | ✅ concept 0/33 layers on truncated |
+| Shuffled-corpus control | does workspace claim survive scrambled fit? | ❌ shuffled MRR ≥ real MRR on **6 of 6** evals | ❌ shuffled MRR ≥ real MRR on **6 of 6** evals |
 
-But when you look at the layer-by-layer probe readouts, **Gemma-4-E2B's workspace is nearly invisible to the J-lens:**
+**Bottom line:** the passive readout story I initially reported (workspace visible at 20/34 layers on Qwen, etc.) does not survive the shuffled-corpus control. The probes are prompt-dependent (truncation test passes), and Gemma-4 shows real causal effects, but the passive-MRR-as-workspace-evidence claim is dead.
 
-For the classic probe *"The number of legs on the animal that spins webs is..."* (where "spider" never appears in the prompt):
+## The findings, honestly
 
-- **Qwen 2.5-3B:** "spider" appears in the top-5 lens readout at **20 of 34 layers** — a wide, contiguous workspace band
-- **Gemma-4-E2B:** "spider" appears in the top-5 at **2 of 33 layers** — the model still gets the right answer, but the workspace doesn't show up under the lens
+### Finding 1 (the disappointing one): Passive lens MRR is not evidence of a workspace on either model
 
-### What this means
+A properly-fit J-lens should produce vocabulary readouts that are *specifically* aligned with the target concept when fit on the model's actual next-token distribution, and should collapse toward random when fit on a scrambled corpus. Our shuffled-corpus control lens — fit on the same 25 Pile prompts but with tokens randomly permuted within each prompt — should be broken.
 
-The visibility gap is real in the data. What causes it is an open question I don't yet have enough evidence to answer confidently.
+It is not. Here is the direct comparison:
 
-Gemma-4 differs from Qwen in **at least four ways** that could plausibly matter:
+**Qwen 2.5-3B:**
 
-- **Per-Layer Embeddings (PLE):** an auxiliary 256-dim signal injected into the residual at every layer (adds, doesn't bypass — corrected from an earlier version of this doc)
-- **LAuReL-style modified residual pathways** with `residual_weight=0.5` and per-token low-rank gating
-- **5:1 sliding-window : global hybrid attention** (5 of every 6 layers only see 512 tokens)
-- **Different training data mix and post-training regime** than Qwen 2.5
+| Eval | Real lens MRR | **Shuffled-corpus lens MRR** | Δ (should be strongly positive) |
+|---|---|---|---|
+| poetry | 0.332 | 0.337 | **-0.006** |
+| typo | 0.318 | **0.806** | **-0.488** |
+| multilingual | 0.261 | 0.278 | -0.017 |
+| multihop | 0.243 | 0.285 | -0.042 |
+| order-ops | 0.066 | 0.074 | -0.009 |
+| association | 0.006 | 0.015 | -0.009 |
 
-Any of these, or a combination, could explain why the J-lens reads a wide workspace band on Qwen but a narrow one on Gemma-4. **My honest position is: I don't know which yet.** The clean follow-up experiment is a J-lens on Gemma-3-4B (same family, no PLE, no LAuReL) to isolate the effect. That's a next step, not a claim.
+**Gemma-4-E2B-it:**
 
-What I do stand behind: **the J-lens is architecture-sensitive.** If it's going to be used more broadly as an interpretability tool, its behavior on non-standard residual architectures deserves systematic study.
+| Eval | Real | Shuffled | Δ |
+|---|---|---|---|
+| poetry | 0.637 | 0.718 | -0.081 |
+| multihop | 0.426 | 0.458 | -0.032 |
+| order-ops | 0.238 | 0.460 | **-0.222** |
+| typo | 0.194 | **0.754** | **-0.560** |
+| multilingual | 0.248 | 0.321 | -0.074 |
+| association | 0.002 | 0.006 | -0.004 |
 
-That kind of methodological question only surfaces when someone replicates on a model with a genuinely different architecture. Doing that ends up being cheap: a weekend and $0.
+**Every eval on both models has shuffled MRR ≥ real MRR.** In some cases (`typo` on both, `order-ops` on Gemma) the shuffled lens is dramatically better. This is diagnostic — a lens fit on scrambled input is finding the target concepts at least as often as a lens fit on coherent English. The implication: our passive readouts were picking up baseline properties of the model's residual stream, not workspace-formed intermediate representations.
 
-## Probes in detail
+Since Anthropic and Neel Nanda both use passive metrics as one component of their evaluation, and since neither published a shuffled control comparison, **this is either a real failure of the passive method on small models, or a difference in fit methodology I don't yet understand.** Full data: [`results/full_rep/qwen/shuffled_probing.json`](./results/full_rep/qwen/shuffled_probing.json), [`results/full_rep/gemma/shuffled_probing.json`](./results/full_rep/gemma/shuffled_probing.json).
 
-Full layer-by-layer readouts in [`results/probe_readouts.json`](./results/probe_readouts.json) and [`results/gemma-4-e2b/probe_readouts.json`](./results/gemma-4-e2b/probe_readouts.json). A representative slice:
+### Finding 2 (the interesting one): Causal-swap effect differs sharply between models
 
-**Qwen 2.5-3B — Probe: "The capital of the country shaped like a boot is"**
-```
-L0-20:  surface tokens: "boot", "/boot", ".debian"
-L21:    'Italy' emerges  ← workspace band starts
-L21-32: 'Italy', 'Italian', '意大利' dominate top-5
-L33:    'is', 'lies', 'sits' — final sentence completion
-```
+Following Neel Nanda's methodology, for each eval item we (a) extract the concept's unembedding direction, (b) ablate that direction from residuals at mid-band layers, (c) measure the change in log-probability of the correct final answer. **Negative Δlp means the ablation hurt performance — i.e., the concept direction was causally used by the model.**
 
-**Gemma-4-E2B — Same probe**
-```
-L0-4:   noise
-L8:     'wearer', 'omechanics', 'trousers'  ← boot associations
-L12:    'footwear', 'fashion', 'leg', 'feet', 'south'  ← 'south' is striking, geographic proxy
-L16-32: switches straight to sentence completion tokens
-        Italy NEVER appears in top-5 anywhere
-```
+| Eval | Qwen 2.5-3B Δlp | Gemma-4-E2B Δlp | Gemma effect size |
+|---|---|---|---|
+| multihop | +0.015 (no effect) | **-6.353** | very large |
+| multilingual | +0.049 (no effect) | **-3.690** | very large |
+| order-ops | +0.068 (no effect) | -0.242 | moderate |
 
-The Gemma model surfaces `'south'` (a geographic proxy for Italy) but never the actual name. Yet ask it, and it answers correctly. The workspace is happening — just not where the lens can see it.
+Full data: [`results/full_rep/qwen/causal_results.json`](./results/full_rep/qwen/causal_results.json), [`results/full_rep/gemma/causal_results.json`](./results/full_rep/gemma/causal_results.json).
 
-## Reproducibility
+**Ablating "the answer's token direction" from Gemma-4-E2B's mid-band residuals drops correct-answer log-probability by ~6 nats on multihop.** On Qwen 2.5-3B it does essentially nothing.
 
-Every result in this repo is reproducible on free consumer compute in under 4 hours.
+Careful interpretation:
+- This is not the paper's own swap intervention (which finds the *lens-derived direction for the intermediate concept*, not the target token). Ours is a coarser proxy.
+- Given that the shuffled control failed (Finding 1), this causal effect could partly be explained by the model's baseline sensitivity to residual perturbations along answer-token directions, independent of workspace mechanisms.
+- Still, the Qwen-vs-Gemma asymmetry is genuine and large.
 
-**Option A (fastest):** open the [Colab notebook](https://colab.research.google.com/github/amaljithkuttamath/jlens-replication/blob/main/notebooks/02_fit_colab.ipynb), set runtime to T4, Run All.
+### Finding 3 (the one that works): Prompt-truncation ablation passes
 
-**Option B (Kaggle T4):** the [`kaggle/`](./kaggle/) directory contains the exact notebooks used for both runs. Push them via the Kaggle CLI or paste into a fresh notebook.
+For each of the three sanity probes, we ran the lens on the full prompt and on a truncated version cut before the referent phrase. If the concept in the readout depends on prompt context (workspace-like), truncation should suppress it. If the lens is just projecting model priors, truncation should not matter.
 
-**Option C (Lightning L4, ~15-25 min):** `python notebooks/03_fit_lightning.py`.
+| Probe target | Full-prompt hits (Qwen) | **Truncated-prompt hits (Qwen)** | Truncated (Gemma) |
+|---|---|---|---|
+| `spider` | 20 layers (L12–31) | **0 layers** | 0 layers |
+| `italy` | 12 layers (L21–32) | **0 layers** | 0 layers |
+| `canada` | 4 layers | **0 layers** | 0 layers |
 
-## What I built
+Full data: [`results/full_rep/qwen/truncation_results.json`](./results/full_rep/qwen/truncation_results.json). **On both models, all three concepts disappear entirely from the top-5 lens readout when the prompt is truncated.** This is the cleanest positive result we have: the mid-stream concept emergence is genuinely prompt-content-dependent, not a lens artifact.
 
-- End-to-end pipeline: fit lens (~106-228 min on T4) + apply lens + score 6 evals + emit probe readouts
-- Kaggle API-driven orchestration (no browser clicking) with automatic hourly result polling
-- Direct comparison against Neel Nanda / MATS's Qwen 3.6-27B baseline
-- Two complete write-ups: [Qwen 2.5-3B results](./RESULTS.md) and [Gemma-4-E2B results](./RESULTS_gemma4.md), both with honest limitations sections
+Note: this is a 3-item test. Robust ablation would require the full eval set. That's future work.
 
-## What I got wrong along the way
+## What we can now claim
 
-Recorded in git history for anyone who cares:
+**Claim (defensible):** The Jacobian lens, applied to a 3B/2B open-weight model, produces vocabulary-space readouts in which target intermediate concepts appear across a wide layer band, and this appearance is prompt-context-dependent (removed by truncation). This qualitative pattern matches the paper's description.
 
-- Wasted time on Kaggle P100 (sm_60) before realizing modern PyTorch dropped support for it — fix: `machine_shape: NvidiaTeslaT4` in the metadata JSON
-- Tried Gemma-4-E4B first (~15 GB static, doesn't fit T4's 14.5 GB) before dropping to E2B (~11 GB static, fits with headroom)
-- Initially misread my own eval scoring code as buggy on multilingual/order-ops — was actually correct, my audit was wrong. Fixed writeup accordingly
+**Claim (not defensible from our data):** That the resulting MRR / top-k scores measure workspace-mediated representation. Our shuffled-corpus control lens produces comparable-or-better MRRs across all six evals on both models, which contradicts the interpretation of these numbers as workspace evidence.
 
-Full [commit history](https://github.com/amaljithkuttamath/jlens-replication/commits/main) shows the debugging trail.
+**Claim (asymmetric between models):** Ablating answer-token directions from mid-band residuals substantially degrades Gemma-4-E2B's answer probability but not Qwen 2.5-3B's. This is a real causal difference, but until the shuffled-control issue is resolved, we can't cleanly interpret it as "Gemma has a used workspace and Qwen does not."
 
-## Honest limitations
+## Why our shuffled control failed and the paper's approach presumably doesn't
 
-Read [RESULTS.md § Limitations](./RESULTS.md#limitations-you-must-know-before-citing) before citing any specific number. Short version:
+Speculating, not concluding:
 
-- Our pass@k scoring is a stricter implementation than the paper's — numbers not directly comparable to Anthropic's
-- No shuffled-corpus control run (the standard "does this actually require semantic structure" test)
-- No prompt-truncation ablation on the probes (to rule out "the lens just projects any plausible next token")
-- n=25 background prompts (paper uses 1000; Neel Nanda showed n=10 saturates, but our variance is wider than the paper's)
+- **Small-n fitting.** We use n=25 background prompts. If the Jacobian estimate is dominated by second-order statistics of the residual stream that are similar under shuffling, small-n fitting won't discriminate. Paper uses n=1000
+- **`skip_first=4` vs the paper's `skip_first=16`.** With fewer positions skipped, our Jacobian is more influenced by early-position attention-sink content, which may look similar between real and shuffled corpora
+- **Passive scoring at only the final position (-1).** The paper measures across multiple readout positions; final-position gathering may look similar between real and shuffled lenses because both produce plausible-continuation tokens
+- **Genuine limitation of small models.** Below some capability threshold, models may not maintain workspace representations coherent enough to distinguish from shuffled-input Jacobians
 
-The **qualitative pattern** (wide layer band on Qwen, near-invisibility on Gemma-4 PLE) is robust to all of these caveats. Specific numeric magnitudes should carry error bars.
+I don't know which of these is right. Testing them requires more compute than the current design allows.
 
-## Deep dives
+## What's in this repo
 
-- [Qwen 2.5-3B full writeup](./RESULTS.md) — configuration, per-eval breakdown, comparison to Neel Nanda's Qwen-27B, limitations
-- [Gemma-4-E2B full writeup + PLE interpretation](./RESULTS_gemma4.md) — three plausible interpretations of the visibility gap, ranked by evidence
-- [`kaggle/kaggle_run.ipynb`](./kaggle/kaggle_run.ipynb) — Qwen 2.5-3B fit
-- [`kaggle/kaggle_run_gemma.ipynb`](./kaggle/kaggle_run_gemma.ipynb) — Gemma-4-E2B fit
-- [`results/`](./results/) — raw eval_results.json, probe_readouts.json, rescore_v2.json for both runs
+- [`kaggle/kaggle_run.ipynb`](./kaggle/kaggle_run.ipynb) — original Qwen 2.5-3B fit
+- [`kaggle/kaggle_run_gemma.ipynb`](./kaggle/kaggle_run_gemma.ipynb) — Gemma-4-E2B-it fit
+- [`kaggle/full_rep_qwen.ipynb`](./kaggle/full_rep_qwen.ipynb) — full 4-test methodology for Qwen (this is the one that produced the results here)
+- [`kaggle/full_rep_gemma.ipynb`](./kaggle/full_rep_gemma.ipynb) — same for Gemma
+- [`results/`](./results/) — all raw JSONs, both fitted lenses (Qwen 285 MB, Gemma also on Kaggle artifacts), probe readouts, MRR/causal/truncation/shuffled data
+
+## What earlier versions of this README claimed (and were wrong about)
+
+Full git history shows the evolution, but for anyone landing here from a stale link:
+
+1. Initial claim: "3B replicates the workspace, wide 20-layer band on Qwen" — the band exists in the readout but is not workspace-evidence per the shuffled control
+2. Second claim: "Gemma-4-E2B outperforms Qwen 2.5-3B on 3/6 evals" — comparing two contaminated pass@k scores tells us nothing about workspace
+3. Third claim: "PLE architecture bypasses residual stream" — architecturally wrong; PLE adds INTO the residual per HuggingFace docs
+4. Fourth claim: "J-lens is architecture-sensitive in a publishable-caveat way" — retracted; the effect I attributed to PLE + LAuReL is not distinguishable from small-model limitations of the passive method
+
+I made these claims in sequence over ~48 hours as new data came in. Each was corrected in a subsequent commit. The current README is what I believe survives the full 4-test methodology.
+
+## What would move this forward
+
+Not planned, but the honest next steps:
+
+1. **Re-fit at paper defaults**: n=1000 prompts, skip_first=16, multiple target layers. See if the shuffled control then collapses as it should
+2. **Fit on Neel Nanda's exact model (Qwen 3.6-27B)** with our pipeline. If our shuffled control fails there too, the issue is our metric or fit code, not model size. If it collapses, the problem is small-model specific
+3. **Ask Anthropic** whether their internal validation includes a shuffled-corpus control. If not, this may be a real methodological gap in the paper
 
 ## References
 
-- [Anthropic — *Verbalizable Representations Form a Global Workspace in Language Models*](https://transformer-circuits.pub/2026/workspace/index.html) (2026-07-06)
-- [Anthropic — blog post](https://www.anthropic.com/research/global-workspace)
-- [anthropics/jacobian-lens](https://github.com/anthropics/jacobian-lens) — reference implementation (Apache 2.0)
-- [Neel Nanda / MATS external replication PDF](https://www-cdn.anthropic.com/files/4zrzovbb/website/cc4be2488d65e54a6ed06492f8968398ddc18ebe.pdf) — Qwen 3.6-27B, prior art
+- [Anthropic — Verbalizable Representations Form a Global Workspace in Language Models](https://transformer-circuits.pub/2026/workspace/index.html)
+- [anthropics/jacobian-lens](https://github.com/anthropics/jacobian-lens) — reference implementation
+- [Neel Nanda / MATS external commentary PDF](https://www-cdn.anthropic.com/files/4zrzovbb/website/cc4be2488d65e54a6ed06492f8968398ddc18ebe.pdf)
 
 ## Contact
 
-Built by [amaljithkuttamath](https://github.com/amaljithkuttamath). Reach me via [GitHub issues](https://github.com/amaljithkuttamath/jlens-replication/issues) or [github.com/amaljithkuttamath](https://github.com/amaljithkuttamath).
-
-If you're working on interpretability, small-model replications of frontier lab findings, or want to extend this to other architectures (Nemotron, Llama 4, MoE models), I'd like to hear from you.
+Built by [amaljithkuttamath](https://github.com/amaljithkuttamath). Open to feedback or collaboration — especially from anyone who has run a shuffled-corpus control on this method and knows why ours failed.
 
 ---
 
 ## License
 
-Apache-2.0 for this code. Model weights follow their respective licenses (Qwen 2.5-3B: Apache 2.0; Gemma-4: Gemma Terms of Use).
+Apache-2.0 for this code. Model weights follow their respective licenses.
