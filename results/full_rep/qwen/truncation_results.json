@@ -1,0 +1,1493 @@
+{
+  "spider": {
+    "full_prompt_hit_layers": [
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      32
+    ],
+    "trunc_prompt_hit_layers": [],
+    "full_readouts": {
+      "0": [
+        "webs",
+        "webs",
+        "/Web",
+        "@Web",
+        ""
+      ],
+      "1": [
+        "",
+        "",
+        "webs",
+        "@Web",
+        "webs"
+      ],
+      "2": [
+        "",
+        "",
+        "webs",
+        "",
+        "@Web"
+      ],
+      "3": [
+        "",
+        "webs",
+        "...",
+        "",
+        "/web"
+      ],
+      "4": [
+        "",
+        "",
+        "...",
+        "webs",
+        "..."
+      ],
+      "5": [
+        "/web",
+        "webs",
+        "(Web",
+        "(web",
+        "/Web"
+      ],
+      "6": [
+        "",
+        "/web",
+        "",
+        "<br",
+        "<!--"
+      ],
+      "7": [
+        "/web",
+        "...",
+        "...",
+        "/Web",
+        "(web"
+      ],
+      "8": [
+        "webs",
+        "/web",
+        "/Web",
+        "(Web",
+        "@Web"
+      ],
+      "9": [
+        "webs",
+        "/web",
+        "/Web",
+        "@Web",
+        "(Web"
+      ],
+      "10": [
+        "webs",
+        "/Web",
+        "@Web",
+        "/web",
+        "webs"
+      ],
+      "11": [
+        "webs",
+        "/web",
+        "--",
+        "____",
+        "/Web"
+      ],
+      "12": [
+        "webs",
+        "spiders",
+        "webs",
+        "/web",
+        "spider"
+      ],
+      "13": [
+        "spiders",
+        "webs",
+        "spider",
+        "webs",
+        "Spider"
+      ],
+      "14": [
+        "spiders",
+        "spider",
+        "webs",
+        "Spider",
+        "Spider"
+      ],
+      "15": [
+        "spiders",
+        "spider",
+        "webs",
+        "Spider",
+        "Spider"
+      ],
+      "16": [
+        "spiders",
+        "spider",
+        "webs",
+        "Spider",
+        "Spider"
+      ],
+      "17": [
+        "spiders",
+        "spider",
+        "webs",
+        "Spider",
+        "Spider"
+      ],
+      "18": [
+        "spiders",
+        "spider",
+        "webs",
+        "Spider",
+        "Spider"
+      ],
+      "19": [
+        "spiders",
+        "spider",
+        "webs",
+        "Spider",
+        "Spider"
+      ],
+      "20": [
+        "spiders",
+        "spider",
+        "\u6606\u866b",
+        "webs",
+        "Spider"
+      ],
+      "21": [
+        "spiders",
+        "spider",
+        "\u6606\u866b",
+        "Spider",
+        "webs"
+      ],
+      "22": [
+        "spiders",
+        "\u6606\u866b",
+        "spider",
+        "webs",
+        "Spider"
+      ],
+      "23": [
+        "spiders",
+        "webs",
+        "spider",
+        "\u6606\u866b",
+        "\u8718\u86db"
+      ],
+      "24": [
+        "spiders",
+        "spider",
+        "\u8718\u86db",
+        "webs",
+        "\u6606\u866b"
+      ],
+      "25": [
+        "spiders",
+        "\u8718\u86db",
+        "\u6606\u866b",
+        "Spider",
+        "spider"
+      ],
+      "26": [
+        "spiders",
+        "\u8718\u86db",
+        "\u6606\u866b",
+        "Spider",
+        "spider"
+      ],
+      "27": [
+        "spiders",
+        "\uff1f",
+        "\u8718\u86db",
+        "webs",
+        "____"
+      ],
+      "28": [
+        "spiders",
+        "\uff1f",
+        "____",
+        "\u8718\u86db",
+        "____"
+      ],
+      "29": [
+        "spiders",
+        "____",
+        "____",
+        "(___",
+        "\u8718\u86db"
+      ],
+      "30": [
+        "<!--",
+        "spiders",
+        "____",
+        "webs",
+        "____"
+      ],
+      "31": [
+        "<!--",
+        "<!--",
+        "____",
+        "(${",
+        "____"
+      ],
+      "32": [
+        "webs",
+        "is",
+        "would",
+        "(web",
+        "spiders"
+      ],
+      "33": [
+        "is",
+        "would",
+        "must",
+        "indoors",
+        "resembles"
+      ]
+    },
+    "trunc_readouts": {
+      "0": [
+        "...\"",
+        "...\"",
+        "behalf",
+        "...\"",
+        "..\""
+      ],
+      "1": [
+        "...",
+        "...\"",
+        "...\"",
+        "...\"",
+        "..."
+      ],
+      "2": [
+        "_",
+        "...",
+        "...\"",
+        "...\"",
+        "..."
+      ],
+      "3": [
+        "...\"",
+        "...\"",
+        "...\"",
+        "...",
+        "behalf"
+      ],
+      "4": [
+        "_",
+        "...\"",
+        "behalf",
+        "...\"",
+        "..\""
+      ],
+      "5": [
+        "_",
+        "...\"",
+        "...\"",
+        "...\"",
+        "behalf"
+      ],
+      "6": [
+        "_",
+        "...",
+        "...\"",
+        "...\"",
+        ":_"
+      ],
+      "7": [
+        "...",
+        "...\"",
+        "...\"",
+        "...\"",
+        "..."
+      ],
+      "8": [
+        "_",
+        "...\"",
+        "...\"",
+        "...\"",
+        "..."
+      ],
+      "9": [
+        "...\"",
+        "...",
+        "...\"",
+        "...\"",
+        "...'"
+      ],
+      "10": [
+        "...",
+        "...\"",
+        "...\"",
+        "...\"",
+        "..."
+      ],
+      "11": [
+        "...",
+        "...\"",
+        "...\"",
+        "...\"",
+        "_"
+      ],
+      "12": [
+        "...\"",
+        "...\"",
+        "...\"",
+        "...",
+        "...)"
+      ],
+      "13": [
+        "...\"",
+        "...\"",
+        "...\"",
+        "\u2026\"",
+        "..."
+      ],
+      "14": [
+        "...\"",
+        "...\"",
+        "...\"",
+        "...",
+        "..."
+      ],
+      "15": [
+        "...\"",
+        "...",
+        "...)",
+        "...\\",
+        "Legs"
+      ],
+      "16": [
+        "Legs",
+        "legs",
+        "...\"",
+        "...\"",
+        "!"
+      ],
+      "17": [
+        "...\"",
+        "...\\",
+        "Legs",
+        "legs",
+        "...\")"
+      ],
+      "18": [
+        "Legs",
+        "...\"",
+        "legs",
+        "!\"",
+        "\u2026\""
+      ],
+      "19": [
+        "...\"",
+        "Legs",
+        "MANY",
+        "Alabama",
+        "...\""
+      ],
+      "20": [
+        "...\\",
+        "...\"",
+        "...\")",
+        "\u603b\u6570",
+        "Legs"
+      ],
+      "21": [
+        "...\"",
+        "...\\",
+        "...\")",
+        "...",
+        "...')"
+      ],
+      "22": [
+        "...\\",
+        "...\")",
+        "...\"",
+        "\u603b\u6570",
+        "...')"
+      ],
+      "23": [
+        "...\\",
+        "...\"",
+        "...\")",
+        "...\"",
+        "..."
+      ],
+      "24": [
+        "...\\",
+        "...\")",
+        "...",
+        "...\"",
+        "...')"
+      ],
+      "25": [
+        "...\\",
+        "...\")",
+        "...\"",
+        "...\"",
+        "\u603b\u6570"
+      ],
+      "26": [
+        "\u603b\u6570",
+        "\u5e73\u5747\u6bcf",
+        "\u6570\u76ee",
+        "totaled",
+        "\u52d5\u7269"
+      ],
+      "27": [
+        "\u90a3\u53ea",
+        "\u5e73\u5747\u6bcf",
+        "()?",
+        "?\";",
+        "\u8fd9\u53ea"
+      ],
+      "28": [
+        "\u90a3\u53ea",
+        "chickens",
+        "\u8fd9\u53ea",
+        "eness",
+        "\u4e00\u53ea"
+      ],
+      "29": [
+        "chickens",
+        "Mars",
+        "\u6050\u9f99",
+        "animals",
+        "dragons"
+      ],
+      "30": [
+        "Mars",
+        "EACH",
+        "each",
+        "\u6bcf\u4e2a",
+        "\u56db\u4f4d"
+      ],
+      "31": [
+        "Mars",
+        "each",
+        "EACH",
+        "Jupiter",
+        "elephants"
+      ],
+      "32": [
+        "Mars",
+        "Luna",
+        "four",
+        "each",
+        "Jupiter"
+      ],
+      "33": [
+        "Mars",
+        "four",
+        "Jupiter",
+        "elephants",
+        "each"
+      ]
+    }
+  },
+  "italy": {
+    "full_prompt_hit_layers": [
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32
+    ],
+    "trunc_prompt_hit_layers": [],
+    "full_readouts": {
+      "0": [
+        "-boot",
+        "/boot",
+        "boot",
+        "`_",
+        "boot"
+      ],
+      "1": [
+        "-boot",
+        "boot",
+        "/boot",
+        "boot",
+        "`_"
+      ],
+      "2": [
+        "-boot",
+        "`_",
+        "**",
+        "/boot",
+        "\\`"
+      ],
+      "3": [
+        "-boot",
+        "/boot",
+        "**",
+        "\\`",
+        "boot"
+      ],
+      "4": [
+        "\\`",
+        "-boot",
+        "**",
+        "`_",
+        "/boot"
+      ],
+      "5": [
+        "**",
+        "`_",
+        "-boot",
+        "(`",
+        "\\`"
+      ],
+      "6": [
+        "**",
+        "`_",
+        "(`",
+        "`\\",
+        "[`"
+      ],
+      "7": [
+        "**",
+        "`_",
+        "(`",
+        "[`",
+        "`\\"
+      ],
+      "8": [
+        "`_",
+        "**",
+        "-boot",
+        "(`",
+        "\\`"
+      ],
+      "9": [
+        "\\`",
+        "[`",
+        "`_",
+        "`\\",
+        "(`"
+      ],
+      "10": [
+        "(`",
+        "`\\",
+        "[`",
+        "\\`",
+        "`_"
+      ],
+      "11": [
+        "`\\",
+        "-boot",
+        "`_",
+        "(`",
+        "[`"
+      ],
+      "12": [
+        "-boot",
+        "`\\",
+        "boot",
+        "/boot",
+        "`_"
+      ],
+      "13": [
+        "-boot",
+        "`\\",
+        "\\`",
+        "/boot",
+        "boot"
+      ],
+      "14": [
+        "-boot",
+        "`\\",
+        "/boot",
+        "boot",
+        "(`"
+      ],
+      "15": [
+        "-boot",
+        "`\\",
+        "(`",
+        "/boot",
+        "boot"
+      ],
+      "16": [
+        "-boot",
+        ".debian",
+        "/boot",
+        "boot",
+        "(`"
+      ],
+      "17": [
+        "-boot",
+        ".debian",
+        "boot",
+        "/boot",
+        "-foot"
+      ],
+      "18": [
+        ".debian",
+        "-boot",
+        "`\\",
+        "(`",
+        "/boot"
+      ],
+      "19": [
+        "-boot",
+        "Colombian",
+        ".debian",
+        "Colombia",
+        "Ecuador"
+      ],
+      "20": [
+        ".debian",
+        "-boot",
+        "(`",
+        "\\_",
+        "Colombian"
+      ],
+      "21": [
+        ".debian",
+        "(`",
+        "-country",
+        "-boot",
+        "Italy"
+      ],
+      "22": [
+        ".debian",
+        "-country",
+        "(`",
+        "-boot",
+        "Italy"
+      ],
+      "23": [
+        "-country",
+        "Italy",
+        ".debian",
+        "Spain",
+        "Germany"
+      ],
+      "24": [
+        "Italy",
+        "Germany",
+        "Spain",
+        "Spain",
+        ".debian"
+      ],
+      "25": [
+        "Germany",
+        "Italy",
+        "\u5fb7\u56fd",
+        "Germany",
+        "Spain"
+      ],
+      "26": [
+        "Italy",
+        "\u610f\u5927\u5229",
+        "Italian",
+        "italian",
+        "Italy"
+      ],
+      "27": [
+        "Italy",
+        "Italy",
+        "\u610f\u5927\u5229",
+        "Italian",
+        "Spain"
+      ],
+      "28": [
+        "____",
+        "Italy",
+        "____",
+        "\u610f\u5927\u5229",
+        "Italy"
+      ],
+      "29": [
+        "____",
+        "____",
+        "Italy",
+        "(__",
+        "(__"
+      ],
+      "30": [
+        "____",
+        "____",
+        "Italy",
+        "is",
+        "belongs"
+      ],
+      "31": [
+        "is",
+        "Italy",
+        "\u9774",
+        "occupies",
+        "belongs"
+      ],
+      "32": [
+        "is",
+        "occupies",
+        "lies",
+        "belongs",
+        "Italy"
+      ],
+      "33": [
+        "is",
+        "lies",
+        "sits",
+        "belongs",
+        "occupies"
+      ]
+    },
+    "trunc_readouts": {
+      "0": [
+        "\u0440\u0435\u0433\u0438",
+        "ses",
+        "`",
+        "|`",
+        "\u0447\u0440"
+      ],
+      "1": [
+        "\u0440\u0435\u0433\u0438",
+        "ses",
+        "",
+        "--",
+        "...\">"
+      ],
+      "2": [
+        "\u0440\u0435\u0433\u0438",
+        "ses",
+        "|`",
+        "--",
+        "\"--"
+      ],
+      "3": [
+        "\u0440\u0435\u0433\u0438",
+        "ses",
+        "\"--",
+        "DonaldTrump",
+        "\u0635\u0646\u062f"
+      ],
+      "4": [
+        "\u0440\u0435\u0433\u0438",
+        ":${",
+        "\u65b0\u4eba\u73a9\u5bb6",
+        ".${",
+        "\"--"
+      ],
+      "5": [
+        "\u0440\u0435\u0433\u0438",
+        "ses",
+        "\"--",
+        "\"${",
+        "\"**"
+      ],
+      "6": [
+        "\"**",
+        "\\\"",
+        "'**",
+        "\\`",
+        "|`"
+      ],
+      "7": [
+        "'**",
+        "\"**",
+        "'*",
+        "'`",
+        "`_"
+      ],
+      "8": [
+        "\"**",
+        "'**",
+        "[$_",
+        "\\\"",
+        "'*"
+      ],
+      "9": [
+        "\\`",
+        "`$",
+        "`_",
+        "`[",
+        "`\\"
+      ],
+      "10": [
+        "...\\",
+        "...\\",
+        "\\\"",
+        "`",
+        "\\`"
+      ],
+      "11": [
+        "\\\"",
+        "royal",
+        "``",
+        "...\\",
+        "kingdom"
+      ],
+      "12": [
+        "royal",
+        "city",
+        "Britain",
+        "\\\"",
+        "country"
+      ],
+      "13": [
+        "country",
+        "nations",
+        "cities",
+        "city",
+        "Britain"
+      ],
+      "14": [
+        "country",
+        "cities",
+        "countries",
+        "Britain",
+        "city"
+      ],
+      "15": [
+        "cities",
+        "country",
+        "Britain",
+        "countries",
+        "Cities"
+      ],
+      "16": [
+        "country",
+        "Britain",
+        "countries",
+        "Wales",
+        "cities"
+      ],
+      "17": [
+        "country",
+        "Wales",
+        "Britain",
+        "kingdoms",
+        "countries"
+      ],
+      "18": [
+        "Britain",
+        "Wales",
+        "country",
+        "Scotland",
+        "England"
+      ],
+      "19": [
+        "Wales",
+        "Britain",
+        "Scotland",
+        "England",
+        "\u5e1d\u56fd"
+      ],
+      "20": [
+        "Britain",
+        "kingdoms",
+        "country",
+        "\u5e1d\u56fd",
+        "Wales"
+      ],
+      "21": [
+        "Britain",
+        "country",
+        "Wales",
+        "\u5e1d\u56fd",
+        "countries"
+      ],
+      "22": [
+        "\u5e1d\u56fd",
+        "countries",
+        "Britain",
+        "country",
+        "Cities"
+      ],
+      "23": [
+        "countries",
+        "country",
+        "\u5e1d\u56fd",
+        "Countries",
+        "cities"
+      ],
+      "24": [
+        "country",
+        "countries",
+        "Countries",
+        "Country",
+        "\u5e1d\u56fd"
+      ],
+      "25": [
+        "\u5e1d\u56fd",
+        "country",
+        "Ancient",
+        "Country",
+        "countries"
+      ],
+      "26": [
+        "\u5e1d\u56fd",
+        "kingdoms",
+        "Country",
+        "Kingdom",
+        "country"
+      ],
+      "27": [
+        "Kingdom",
+        "\u5e1d\u56fd",
+        "Country",
+        "kingdoms",
+        "country"
+      ],
+      "28": [
+        "Kingdom",
+        "country",
+        "Country",
+        "kingdom",
+        "kingdoms"
+      ],
+      "29": [
+        "Kingdom",
+        "kingdom",
+        "kingdoms",
+        "country",
+        "Province"
+      ],
+      "30": [
+        "Kingdom",
+        "kingdom",
+        "Province",
+        "Netherlands",
+        "country"
+      ],
+      "31": [
+        "Kingdom",
+        "kingdom",
+        "province",
+        "Province",
+        "Republic"
+      ],
+      "32": [
+        "Kingdom",
+        "kingdom",
+        "Republic",
+        "province",
+        "Province"
+      ],
+      "33": [
+        "Kingdom",
+        "kingdom",
+        "Republic",
+        "province",
+        "United"
+      ]
+    }
+  },
+  "canada": {
+    "full_prompt_hit_layers": [
+      27,
+      28,
+      29,
+      33
+    ],
+    "trunc_prompt_hit_layers": [],
+    "full_readouts": {
+      "0": [
+        ":",
+        "**",
+        "```",
+        "``",
+        ":"
+      ],
+      "1": [
+        "\u2026",
+        "",
+        "..",
+        "",
+        "..."
+      ],
+      "2": [
+        "\u2026",
+        "",
+        "[\u2026",
+        "",
+        "..."
+      ],
+      "3": [
+        "\u2026",
+        "\u2026",
+        "[\u2026",
+        "",
+        "..."
+      ],
+      "4": [
+        "",
+        "",
+        "``",
+        "\u2026",
+        "..."
+      ],
+      "5": [
+        "",
+        "`",
+        "``",
+        "",
+        "`"
+      ],
+      "6": [
+        "",
+        "",
+        "``",
+        "\u00ab",
+        "```"
+      ],
+      "7": [
+        "\u00ab",
+        "``",
+        "\u2026",
+        "\u2013",
+        "\u2026"
+      ],
+      "8": [
+        "``",
+        "`$",
+        "$",
+        "$$",
+        "```"
+      ],
+      "9": [
+        "```",
+        "`$",
+        "`'",
+        "``",
+        "\u00ab"
+      ],
+      "10": [
+        "\u00ab",
+        "\u2026",
+        "[\u2026]",
+        "[\u2026",
+        "\ufffd"
+      ],
+      "11": [
+        "$$",
+        "\u2026",
+        "\u2026",
+        "[\u2026]",
+        "\u00ab"
+      ],
+      "12": [
+        "$$",
+        "Currency",
+        "currencies",
+        "\u4eba\u6c11\u5e01",
+        "currency"
+      ],
+      "13": [
+        "Currency",
+        "currency",
+        ".Currency",
+        "currencies",
+        "Currency"
+      ],
+      "14": [
+        "currencies",
+        "currency",
+        "Currency",
+        ".Currency",
+        "Currency"
+      ],
+      "15": [
+        "currencies",
+        ".Currency",
+        "currency",
+        "Currency",
+        "\u8d27\u5e01"
+      ],
+      "16": [
+        "currencies",
+        "Currency",
+        "currency",
+        ".Currency",
+        "\u4eba\u6c11\u5e01"
+      ],
+      "17": [
+        ".Currency",
+        "Currency",
+        "currencies",
+        "currency",
+        "dollars"
+      ],
+      "18": [
+        "Currency",
+        ".Currency",
+        "currencies",
+        "currency",
+        "Currency"
+      ],
+      "19": [
+        ".Currency",
+        "Currency",
+        "currencies",
+        "Currency",
+        "\u7f8e\u5143"
+      ],
+      "20": [
+        ".Currency",
+        "Currency",
+        "\u7f8e\u5143",
+        "\u4eba\u6c11\u5e01",
+        "Currency"
+      ],
+      "21": [
+        "\u7f8e\u5143",
+        ".Currency",
+        "Currency",
+        "Currency",
+        "\u4eba\u6c11\u5e01"
+      ],
+      "22": [
+        "\u7f8e\u5143",
+        ".Currency",
+        "\u4eba\u6c11\u5e01",
+        "currencies",
+        "Currency"
+      ],
+      "23": [
+        ".Currency",
+        "\u7f8e\u5143",
+        "Currency",
+        "\u4eba\u6c11\u5e01",
+        "currencies"
+      ],
+      "24": [
+        ".Currency",
+        "\u7f8e\u5143",
+        "Currency",
+        "Currency",
+        "\u4eba\u6c11\u5e01"
+      ],
+      "25": [
+        ".Currency",
+        "Currency",
+        "\u7f8e\u5143",
+        "Currency",
+        "\u4eba\u6c11\u5e01"
+      ],
+      "26": [
+        "\u7f8e\u5143",
+        "Currency",
+        ".Currency",
+        "Countries",
+        "Currency"
+      ],
+      "27": [
+        "\u52a0\u62ff\u5927",
+        "Canada",
+        "Canadian",
+        "\u52a0\u62ff",
+        "Canadians"
+      ],
+      "28": [
+        "\u52a0\u62ff\u5927",
+        "Currency",
+        "Canada",
+        ".Currency",
+        "currency"
+      ],
+      "29": [
+        "\u52a0\u62ff\u5927",
+        "Currency",
+        "Canada",
+        "currency",
+        "Canadian"
+      ],
+      "30": [
+        "called",
+        "currency",
+        "called",
+        "\u8d27\u5e01",
+        "\u7f8e\u5143"
+      ],
+      "31": [
+        "called",
+        "called",
+        "Called",
+        "\u53eb\u505a",
+        "currency"
+      ],
+      "32": [
+        "currency",
+        "Canadian",
+        "dollar",
+        "Currency",
+        "dollars"
+      ],
+      "33": [
+        "Canadian",
+        "called",
+        "Canada",
+        "currency",
+        "\u52a0\u62ff\u5927"
+      ]
+    },
+    "trunc_readouts": {
+      "0": [
+        "\u0440\u0435\u0433\u0438",
+        "ses",
+        "\u0447\u0440",
+        "\u8303\u51b0",
+        "\u5965\u5730"
+      ],
+      "1": [
+        "\u0440\u0435\u0433\u0438",
+        "ses",
+        ".Cursors",
+        "\u8303\u51b0",
+        "expectation"
+      ],
+      "2": [
+        "\u0440\u0435\u0433\u0438",
+        "ses",
+        "|`",
+        "\u043c\u0435\u0434\u0438\u0446\u0438\u043d\u0441\u043a",
+        "\u0447\u0440"
+      ],
+      "3": [
+        "\u0440\u0435\u0433\u0438",
+        "ses",
+        "\u0447\u0440",
+        "\u043c\u0435\u0434\u0438\u0446\u0438\u043d\u0441\u043a",
+        "\u0435\u0441\u0442\u0435\u0441\u0442\u0432\u0435\u043d\u043d"
+      ],
+      "4": [
+        "\u0440\u0435\u0433\u0438",
+        "\u0447\u0440",
+        "|`",
+        "\u8303\u51b0",
+        "ses"
+      ],
+      "5": [
+        "\u0440\u0435\u0433\u0438",
+        "ses",
+        "[$_",
+        "h\u1ebf",
+        "_^("
+      ],
+      "6": [
+        "...\"",
+        "...\"",
+        "...\">",
+        "...\"",
+        "..."
+      ],
+      "7": [
+        "...\"",
+        "\u0440\u0435\u0433\u0438",
+        "\"...",
+        "...\"",
+        "...'"
+      ],
+      "8": [
+        "\"...",
+        "\u0440\u0435\u0433\u0438",
+        "...\"",
+        "_^(",
+        "...\">"
+      ],
+      "9": [
+        "...\"",
+        "...\"",
+        "\"...",
+        "...\"",
+        "...\">"
+      ],
+      "10": [
+        "...\"",
+        "...",
+        "...\"",
+        "...\"",
+        "..."
+      ],
+      "11": [
+        "...\"",
+        "...",
+        "...",
+        "...\"",
+        "...\""
+      ],
+      "12": [
+        "...\"",
+        "\u0440\u0435\u0433\u0438",
+        "...\"",
+        "...",
+        "...\""
+      ],
+      "13": [
+        "currency",
+        "...\"",
+        "[\"$",
+        "[$_",
+        "Currency"
+      ],
+      "14": [
+        "currency",
+        "[\"$",
+        "[$_",
+        "Currency",
+        "cryptocurrency"
+      ],
+      "15": [
+        "Currency",
+        "[$_",
+        "currency",
+        "cryptocurrency",
+        "[\"$"
+      ],
+      "16": [
+        "\u4e16\u754c\u5404\u56fd",
+        "Currency",
+        "currency",
+        "[$_",
+        "country"
+      ],
+      "17": [
+        "\u4e16\u754c\u5404\u56fd",
+        "Currency",
+        "currency",
+        "country",
+        "[$_"
+      ],
+      "18": [
+        "\u4e16\u754c\u5404\u56fd",
+        "Currency",
+        "=\\\"$",
+        "country",
+        "[$_"
+      ],
+      "19": [
+        "\u4e16\u754c\u5404\u56fd",
+        "America",
+        "country",
+        "\u7687\u5bab",
+        "[$_"
+      ],
+      "20": [
+        "\u4e16\u754c\u5404\u56fd",
+        "\u7687\u5bab",
+        "country",
+        "Country",
+        "America"
+      ],
+      "21": [
+        "\u4e16\u754c\u5404\u56fd",
+        "\u7687\u5bab",
+        "America",
+        "country",
+        "_countries"
+      ],
+      "22": [
+        "\u4e16\u754c\u5404\u56fd",
+        "countries",
+        "America",
+        "_countries",
+        "\u5e1d\u56fd"
+      ],
+      "23": [
+        "\u4e16\u754c\u5404\u56fd",
+        "_countries",
+        "America",
+        "\u7687\u5bab",
+        "Countries"
+      ],
+      "24": [
+        "\u4e16\u754c\u5404\u56fd",
+        "_countries",
+        "countries",
+        "Countries",
+        "\u7687\u5bab"
+      ],
+      "25": [
+        "\u4e16\u754c\u5404\u56fd",
+        "\u7687\u5bab",
+        "_countries",
+        "Countries",
+        "America"
+      ],
+      "26": [
+        "Countries",
+        "countries",
+        "\u4e16\u754c\u5404\u56fd",
+        "_countries",
+        "Countries"
+      ],
+      "27": [
+        "countries",
+        "country",
+        "Countries",
+        "Countries",
+        "Netherlands"
+      ],
+      "28": [
+        "countries",
+        "country",
+        "Netherlands",
+        "Countries",
+        "Countries"
+      ],
+      "29": [
+        "Netherlands",
+        "countries",
+        "country",
+        "Philippines",
+        "_countries"
+      ],
+      "30": [
+        "Netherlands",
+        "country",
+        "countries",
+        "Philippines",
+        "United"
+      ],
+      "31": [
+        "United",
+        "United",
+        "Netherlands",
+        "Philippines",
+        "countries"
+      ],
+      "32": [
+        "United",
+        "Republic",
+        "Netherlands",
+        "Philippines",
+        "country"
+      ],
+      "33": [
+        "United",
+        "country",
+        "Netherlands",
+        "Philippines",
+        "Republic"
+      ]
+    }
+  }
+}

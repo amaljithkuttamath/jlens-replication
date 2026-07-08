@@ -1,0 +1,26 @@
+{
+  "lens-eval-association": {
+    "n": 0
+  },
+  "lens-eval-multihop": {
+    "n": 52,
+    "mean_delta_lp": -6.353019424460399,
+    "frac_ablation_hurts": 0.8461538461538461
+  },
+  "lens-eval-multilingual": {
+    "n": 35,
+    "mean_delta_lp": -3.6898058369755744,
+    "frac_ablation_hurts": 0.7428571428571429
+  },
+  "lens-eval-order-ops": {
+    "n": 32,
+    "mean_delta_lp": -0.24169066626745916,
+    "frac_ablation_hurts": 0.5
+  },
+  "lens-eval-poetry": {
+    "n": 0
+  },
+  "lens-eval-typo": {
+    "n": 0
+  }
+}

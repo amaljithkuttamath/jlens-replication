@@ -1,0 +1,1417 @@
+{
+  "spider": {
+    "full_prompt_hit_layers": [
+      6,
+      12
+    ],
+    "trunc_prompt_hit_layers": [],
+    "full_readouts": {
+      "0": [
+        "c\u00e1i",
+        "kinds",
+        "tv",
+        "\u3044\u3044",
+        "kind"
+      ],
+      "1": [
+        "basically",
+        "\uac4d",
+        "kinda",
+        "kind",
+        "like"
+      ],
+      "2": [
+        "comfy",
+        "kinda",
+        "whispers",
+        "sketchy",
+        "vibe"
+      ],
+      "3": [
+        "ction",
+        "you",
+        "//",
+        "--",
+        "um"
+      ],
+      "4": [
+        "things",
+        "giv",
+        "thing",
+        "url",
+        "--"
+      ],
+      "5": [
+        "ch\u1eb3ng",
+        "fray",
+        "otica",
+        "strung",
+        "thence"
+      ],
+      "6": [
+        "creature",
+        "spider",
+        "bizarre",
+        "fungus",
+        "creatures"
+      ],
+      "7": [
+        "criaturas",
+        "creatures",
+        "i\u00e7ine",
+        "fungus",
+        "insect"
+      ],
+      "8": [
+        "crafty",
+        "entrap",
+        "\ud83d\udd78",
+        "\u86fe",
+        "i\u00e7ine"
+      ],
+      "9": [
+        "\ud83d\udd78",
+        "insects",
+        "creatures",
+        "tourists",
+        "homemade"
+      ],
+      "10": [
+        "pollin",
+        "fungus",
+        "askets",
+        "\u0c35\u0c48\u0c30",
+        "insects"
+      ],
+      "11": [
+        "creatures",
+        "crazy",
+        "insects",
+        "\u00f6r",
+        "herself"
+      ],
+      "12": [
+        "creatures",
+        "infections",
+        "insects",
+        "spider",
+        "webs"
+      ],
+      "13": [
+        "dont",
+        "web",
+        "webs",
+        "christmas",
+        "world"
+      ],
+      "14": [
+        "of",
+        "in",
+        "to",
+        "and",
+        "the"
+      ],
+      "15": [
+        "has",
+        "are",
+        ",",
+        "would",
+        "is"
+      ],
+      "16": [
+        "are",
+        "<eos>",
+        "was",
+        "has",
+        "is"
+      ],
+      "17": [
+        ",",
+        "are",
+        "when",
+        "would",
+        "is"
+      ],
+      "18": [
+        "are",
+        "for",
+        "has",
+        "they",
+        "is"
+      ],
+      "19": [
+        "is",
+        "</tbody>",
+        "are",
+        "has",
+        "<unused88>"
+      ],
+      "20": [
+        "is",
+        "</tbody>",
+        "that",
+        "you",
+        "<unused88>"
+      ],
+      "21": [
+        "</tbody>",
+        "<unused88>",
+        "is",
+        "in",
+        "<unused45>"
+      ],
+      "22": [
+        "<unused88>",
+        "<unused63>",
+        "</tbody>",
+        "is",
+        "<unused45>"
+      ],
+      "23": [
+        "is",
+        "in",
+        "and",
+        "is",
+        "to"
+      ],
+      "24": [
+        "to",
+        "is",
+        "is",
+        "are",
+        "and"
+      ],
+      "25": [
+        "are",
+        "and",
+        "was",
+        "can",
+        "is"
+      ],
+      "26": [
+        "was",
+        "is",
+        "l\u00e0",
+        "isn",
+        "are"
+      ],
+      "27": [
+        "are",
+        "is",
+        "l\u00e0",
+        "adalah",
+        "isn"
+      ],
+      "28": [
+        "is",
+        "are",
+        "adalah",
+        "\u662f",
+        "merupakan"
+      ],
+      "29": [
+        "is",
+        "are",
+        "\u3068\u3044\u3046\u306e\u306f",
+        "adalah",
+        "isn"
+      ],
+      "30": [
+        "is",
+        "are",
+        "\u65b9\u6cd5\u306f",
+        "isn",
+        "\u3068\u3044\u3046\u306e\u306f"
+      ],
+      "31": [
+        "is",
+        "are",
+        "isn",
+        "adalah",
+        "depends"
+      ],
+      "32": [
+        "is",
+        "are",
+        "isn",
+        "\u662f\u7528",
+        "depends"
+      ]
+    },
+    "trunc_readouts": {
+      "0": [
+        "\ub7ff",
+        "they",
+        "oyne",
+        "deput",
+        "working"
+      ],
+      "1": [
+        "spj",
+        "\ub807\uac8c",
+        "they",
+        "\u3055\u3093",
+        "deput"
+      ],
+      "2": [
+        "\u0902\u0917\u0940",
+        "basically",
+        "vline",
+        "spj",
+        "mary"
+      ],
+      "3": [
+        "kind",
+        "really",
+        "sort",
+        "pretty",
+        "--"
+      ],
+      "4": [
+        "pretty",
+        "damn",
+        "pictured",
+        "COUNTY",
+        "maybe"
+      ],
+      "5": [
+        "gotta",
+        "damn",
+        "damned",
+        "\uadf8\uac78",
+        "maybe"
+      ],
+      "6": [
+        "maybe",
+        "kids",
+        "damn",
+        "ridiculous",
+        "thing"
+      ],
+      "7": [
+        "counting",
+        "counted",
+        "counted",
+        "count",
+        "count"
+      ],
+      "8": [
+        "counted",
+        "counted",
+        "culoskeletal",
+        "count",
+        "tallied"
+      ],
+      "9": [
+        "animals",
+        "count",
+        "counting",
+        "creatures",
+        "count"
+      ],
+      "10": [
+        "count",
+        "count",
+        "colspan",
+        "number",
+        "number"
+      ],
+      "11": [
+        "animals",
+        "count",
+        "each",
+        "counting",
+        "each"
+      ],
+      "12": [
+        "count",
+        "each",
+        "kids",
+        "each",
+        "count"
+      ],
+      "13": [
+        "on",
+        "\u30aa\u30f3",
+        "\u4e0a\u6709",
+        "isOn",
+        "p\u00e5"
+      ],
+      "14": [
+        "the",
+        "consists",
+        "is",
+        "of",
+        "are"
+      ],
+      "15": [
+        "\u0e15\u0e48\u0e32\u0e07\u0e46",
+        "nowadays",
+        "\u662f\u4e00\u5bb6",
+        "\u662f\u4e00\u4e2a",
+        "different"
+      ],
+      "16": [
+        "nowadays",
+        "\u662f\u4e00\u4e2a",
+        "\u662f\u4e00\u5bb6",
+        "\u662f\u5728",
+        "successfully"
+      ],
+      "17": [
+        "\u662f\u4e00\u4e2a",
+        "\u662f\u4e00\u5bb6",
+        "\u662f\u4e00\u500b",
+        "\u662f\u4e00\u6b3e",
+        "\u3068\u3044\u3046\u306e\u306f"
+      ],
+      "18": [
+        "\u662f\u4e00\u6b3e",
+        "\u662f\u4e00\u4e2a",
+        "\u662f\u4e00\u5bb6",
+        "\u662f\u4e00\u500b",
+        "mankind"
+      ],
+      "19": [
+        "\u6bcf\u4e2a",
+        "\u662f\u4e00\u4e2a",
+        "numberOf",
+        "\u6bcf\u5929",
+        "each"
+      ],
+      "20": [
+        "today",
+        "each",
+        "Each",
+        "Each",
+        "different"
+      ],
+      "21": [
+        "these",
+        "two",
+        "every",
+        "each",
+        "any"
+      ],
+      "22": [
+        "a",
+        "one",
+        "any",
+        "two",
+        "the"
+      ],
+      "23": [
+        "an",
+        "a",
+        "this",
+        "all",
+        "the"
+      ],
+      "24": [
+        "an",
+        "a",
+        "one",
+        "any",
+        "the"
+      ],
+      "25": [
+        "the",
+        "a",
+        "this",
+        "one",
+        "an"
+      ],
+      "26": [
+        "the",
+        "a",
+        "an",
+        "sebuah",
+        "each"
+      ],
+      "27": [
+        "a",
+        "\u4e00\u53ea",
+        "the",
+        "each",
+        "an"
+      ],
+      "28": [
+        "a",
+        "an",
+        "animals",
+        "humans",
+        "each"
+      ],
+      "29": [
+        "a",
+        "animals",
+        "an",
+        "humans",
+        "each"
+      ],
+      "30": [
+        "a",
+        "an",
+        "animals",
+        "humans",
+        "each"
+      ],
+      "31": [
+        "a",
+        "an",
+        "humans",
+        "animals",
+        "each"
+      ],
+      "32": [
+        "a",
+        "an",
+        "humans",
+        "each",
+        "animals"
+      ]
+    }
+  },
+  "italy": {
+    "full_prompt_hit_layers": [],
+    "trunc_prompt_hit_layers": [],
+    "full_readouts": {
+      "0": [
+        "kids",
+        "kinda",
+        "guys",
+        "\u0627\u0644\u0644\u064a",
+        "kid"
+      ],
+      "1": [
+        "kinda",
+        "nice",
+        "kids",
+        "really",
+        "maybe"
+      ],
+      "2": [
+        "kids",
+        "thing",
+        "nice",
+        "everybody",
+        "kind"
+      ],
+      "3": [
+        "really",
+        "you",
+        "things",
+        "thing",
+        "--"
+      ],
+      "4": [
+        "really",
+        "arge",
+        "things",
+        "thing",
+        "--"
+      ],
+      "5": [
+        "sort",
+        "thing",
+        "probably",
+        "pretty",
+        "thing"
+      ],
+      "6": [
+        "really",
+        "thing",
+        "probably",
+        "pretty",
+        "thing"
+      ],
+      "7": [
+        "?\u2014",
+        "\u00fcl",
+        "worn",
+        "ymmet",
+        "\ubaa8\uc591"
+      ],
+      "8": [
+        "wearer",
+        "omechanics",
+        "trousers",
+        "ymmet",
+        "!),"
+      ],
+      "9": [
+        "worn",
+        "feet",
+        "trousers",
+        "symbolizes",
+        "ymmet"
+      ],
+      "10": [
+        "shoes",
+        "south",
+        "leather",
+        "ymmet",
+        "feet"
+      ],
+      "11": [
+        "feet",
+        "worn",
+        "fit",
+        "dress",
+        "left"
+      ],
+      "12": [
+        "footwear",
+        "fashion",
+        "leg",
+        "feet",
+        "south"
+      ],
+      "13": [
+        "\u548c\u4e00\u4e2a",
+        "'-',",
+        "'-",
+        "`-",
+        "'/"
+      ],
+      "14": [
+        "and",
+        "to",
+        "is",
+        "for",
+        "in"
+      ],
+      "15": [
+        "and",
+        "is",
+        "it",
+        "are",
+        "and"
+      ],
+      "16": [
+        "are",
+        "it",
+        "this",
+        "was",
+        "is"
+      ],
+      "17": [
+        "is",
+        "in",
+        "it",
+        "are",
+        "is"
+      ],
+      "18": [
+        "it",
+        "is",
+        "are",
+        "this",
+        "in"
+      ],
+      "19": [
+        "are",
+        "in",
+        "was",
+        "has",
+        "is"
+      ],
+      "20": [
+        "that",
+        "is",
+        "are",
+        "this",
+        "in"
+      ],
+      "21": [
+        "and",
+        "in",
+        "is",
+        "that",
+        "is"
+      ],
+      "22": [
+        "and",
+        "in",
+        "is",
+        "that",
+        "is"
+      ],
+      "23": [
+        "is",
+        "in",
+        "is",
+        "that",
+        "and"
+      ],
+      "24": [
+        "is",
+        "and",
+        "are",
+        "was",
+        "is"
+      ],
+      "25": [
+        "and",
+        "is",
+        "is",
+        "are",
+        "that"
+      ],
+      "26": [
+        "was",
+        "are",
+        "\u0939\u0948",
+        "were",
+        "is"
+      ],
+      "27": [
+        "was",
+        "is",
+        "adalah",
+        "merupakan",
+        "l\u00e0"
+      ],
+      "28": [
+        "is",
+        "was",
+        "l\u00e0",
+        "\u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f",
+        "adalah"
+      ],
+      "29": [
+        "is",
+        "was",
+        "\u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f",
+        "l\u00e0",
+        "adalah"
+      ],
+      "30": [
+        "is",
+        "was",
+        "\u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f",
+        "l\u00e0",
+        "adalah"
+      ],
+      "31": [
+        "is",
+        "was",
+        "l\u00e0",
+        "\u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f",
+        "are"
+      ],
+      "32": [
+        "is",
+        "was",
+        "\u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f",
+        "l\u00e0",
+        "\u662f\u4e2d\u56fd"
+      ]
+    },
+    "trunc_readouts": {
+      "0": [
+        "the",
+        "the",
+        "begun",
+        "The",
+        "began"
+      ],
+      "1": [
+        "began",
+        "mary",
+        "process",
+        "generally",
+        "they"
+      ],
+      "2": [
+        "namely",
+        "mary",
+        "Disease",
+        "whereby",
+        "consisting"
+      ],
+      "3": [
+        "--",
+        "?\u2014",
+        "\u2010",
+        "\u201d\u2014",
+        ".\u2019\u201d"
+      ],
+      "4": [
+        "--",
+        ")\u2014",
+        "?\u2014",
+        "phoned",
+        "insofar"
+      ],
+      "5": [
+        "\u201d\u2014",
+        ".\u2014",
+        ",\u2014",
+        "?\u2014",
+        "nineteenth"
+      ],
+      "6": [
+        "\u4e16\u754c\u4e0a",
+        "countries",
+        "government",
+        "country",
+        "international"
+      ],
+      "7": [
+        "governments",
+        "\u4e16\u754c\u4e0a",
+        "country",
+        "political",
+        "international"
+      ],
+      "8": [
+        "habitantes",
+        "emigrated",
+        "orestation",
+        "COUNTRY",
+        "nationalist"
+      ],
+      "9": [
+        "international",
+        "countries",
+        "famous",
+        "cities",
+        "country"
+      ],
+      "10": [
+        "government",
+        "countries",
+        "international",
+        "European",
+        "country"
+      ],
+      "11": [
+        "international",
+        "country",
+        "English",
+        "European",
+        "countries"
+      ],
+      "12": [
+        "countries",
+        "government",
+        "language",
+        "international",
+        "country"
+      ],
+      "13": [
+        "foreign",
+        "wikipedia",
+        ":')",
+        "\u3059\u308b\u3053\u3068\u304c\u3067\u304d\u308b",
+        "Wikipedia"
+      ],
+      "14": [
+        "\u043d\u0430\u0445\u043e\u0434\u0438\u0442\u0441\u044f",
+        "merupakan",
+        "\ub300\ud559\uad50",
+        "commonly",
+        "\u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f"
+      ],
+      "15": [
+        "\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442",
+        "adalah",
+        ",",
+        "amazing",
+        "\u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f"
+      ],
+      "16": [
+        "\u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28\u0e44\u0e17\u0e22",
+        "\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442",
+        "million",
+        "civilization",
+        "\u5927\u5b66"
+      ],
+      "17": [
+        "\u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28\u0e44\u0e17\u0e22",
+        "countries",
+        "pa\u00edses",
+        "\u5927\u5b66",
+        "mankind"
+      ],
+      "18": [
+        "\u662f\u4e00\u5bb6",
+        "\u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28\u0e44\u0e17\u0e22",
+        "\u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28",
+        "nacional",
+        "International"
+      ],
+      "19": [
+        "worldwide",
+        "\u4e16\u754c",
+        "nacional",
+        "\u57ce\u5e02",
+        "countries"
+      ],
+      "20": [
+        "country",
+        "today",
+        "Europe",
+        "national",
+        "government"
+      ],
+      "21": [
+        "this",
+        "today",
+        "city",
+        "government",
+        "country"
+      ],
+      "22": [
+        "country",
+        "today",
+        "Europe",
+        "national",
+        "government"
+      ],
+      "23": [
+        "Europe",
+        "world",
+        "countries",
+        "America",
+        "country"
+      ],
+      "24": [
+        "Europe",
+        "country",
+        "countries",
+        "America",
+        "world"
+      ],
+      "25": [
+        "government",
+        "country",
+        "United",
+        "countries",
+        "Europe"
+      ],
+      "26": [
+        "world",
+        "United",
+        "countries",
+        "France",
+        "country"
+      ],
+      "27": [
+        "United",
+        "country",
+        "USA",
+        "\u4e16\u754c",
+        "countries"
+      ],
+      "28": [
+        "United",
+        "Philippines",
+        "\u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28",
+        "United",
+        "Netherlands"
+      ],
+      "29": [
+        "Philippines",
+        "United",
+        "United",
+        "Netherlands",
+        "Kingdom"
+      ],
+      "30": [
+        "Philippines",
+        "United",
+        "United",
+        "Netherlands",
+        "Kingdom"
+      ],
+      "31": [
+        "United",
+        "Philippines",
+        "United",
+        "Netherlands",
+        "Kingdom"
+      ],
+      "32": [
+        "United",
+        "United",
+        "Philippines",
+        "Netherlands",
+        "USA"
+      ]
+    }
+  },
+  "canada": {
+    "full_prompt_hit_layers": [
+      27
+    ],
+    "trunc_prompt_hit_layers": [],
+    "full_readouts": {
+      "0": [
+        "They",
+        "they",
+        "\u6240\u4ee5",
+        "hopes",
+        "wrong"
+      ],
+      "1": [
+        "will",
+        "can",
+        "they",
+        "kind",
+        "ries"
+      ],
+      "2": [
+        "\u0648\u0630\u0644\u0643",
+        "cannot",
+        "will",
+        "shall",
+        "thus"
+      ],
+      "3": [
+        "basically",
+        "thus",
+        "whereas",
+        "thereby",
+        "therefore"
+      ],
+      "4": [
+        "whereas",
+        "thus",
+        "necessarily",
+        "thereby",
+        "therefore"
+      ],
+      "5": [
+        "therefore",
+        "because",
+        "whereas",
+        "thereby",
+        "rather"
+      ],
+      "6": [
+        "photographs",
+        "herself",
+        "colored",
+        "nonetheless",
+        "\u6240\u4ee5"
+      ],
+      "7": [
+        "UNESCO",
+        "photograph",
+        "orestation",
+        "\u7684\u540d\u5b57",
+        "photographs"
+      ],
+      "8": [
+        "symbolism",
+        "emblem",
+        "symbolize",
+        "symbolizes",
+        "adorned"
+      ],
+      "9": [
+        "patriotism",
+        "orestation",
+        "symbolism",
+        "symbolizes",
+        "country"
+      ],
+      "10": [
+        "countries",
+        "country",
+        "countries",
+        "nationality",
+        "country"
+      ],
+      "11": [
+        "countries",
+        "famous",
+        "country",
+        "country",
+        "Germany"
+      ],
+      "12": [
+        "countries",
+        "Germany",
+        "citizens",
+        "country",
+        "country"
+      ],
+      "13": [
+        "\u201d.",
+        "\".",
+        "`.",
+        ".\";",
+        ".\""
+      ],
+      "14": [
+        "</caption>",
+        "<turn|>",
+        "].",
+        ".\"",
+        ")."
+      ],
+      "15": [
+        "<eos>",
+        "",
+        "</caption>",
+        ".",
+        "<turn|>"
+      ],
+      "16": [
+        "<eos>",
+        "<turn|>",
+        "</caption>",
+        ".",
+        ""
+      ],
+      "17": [
+        "<eos>",
+        "<turn|>",
+        "</caption>",
+        ".",
+        ""
+      ],
+      "18": [
+        "\u06c1\u06d2\u06d4",
+        "\u3002",
+        "advantages",
+        "Different",
+        "\u0964"
+      ],
+      "19": [
+        "<eos>",
+        "<turn|>",
+        "different",
+        "\u3002",
+        "</caption>"
+      ],
+      "20": [
+        ".[",
+        "\u3002",
+        "\u06c1\u06d2\u06d4",
+        "\u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f",
+        "different"
+      ],
+      "21": [
+        "[",
+        "<unused88>",
+        "also",
+        "there",
+        "</caption>"
+      ],
+      "22": [
+        "also",
+        "their",
+        "there",
+        "what",
+        "["
+      ],
+      "23": [
+        "the",
+        "their",
+        "used",
+        "different",
+        "the"
+      ],
+      "24": [
+        "disebut",
+        "\u88ab\u79f0\u4e3a",
+        "the",
+        "what",
+        "called"
+      ],
+      "25": [
+        "represented",
+        "the",
+        "dollars",
+        "\u7f8e\u5143",
+        "the"
+      ],
+      "26": [
+        "dollars",
+        "Canadian",
+        "canadian",
+        "the",
+        "currency"
+      ],
+      "27": [
+        "Canadian",
+        "canadian",
+        "Canadian",
+        "Canada",
+        "dollars"
+      ],
+      "28": [
+        "Canadian",
+        "dollars",
+        "currency",
+        "dollar",
+        "\u7f8e\u5143"
+      ],
+      "29": [
+        "Canadian",
+        "dollars",
+        "dollar",
+        "\u7f8e\u5143",
+        "currency"
+      ],
+      "30": [
+        "Canadian",
+        "dollars",
+        "dollar",
+        "Dollar",
+        "\u7f8e\u5143"
+      ],
+      "31": [
+        "Canadian",
+        "dollars",
+        "Canadian",
+        "canadian",
+        "dollar"
+      ],
+      "32": [
+        "the",
+        "Canadian",
+        "dollars",
+        "Canadian",
+        "canadian"
+      ]
+    },
+    "trunc_readouts": {
+      "0": [
+        "the",
+        "The",
+        "begun",
+        "one",
+        "the"
+      ],
+      "1": [
+        "\u5148\u540e",
+        "typically",
+        "noted",
+        "began",
+        "individually"
+      ],
+      "2": [
+        "Generally",
+        "mary",
+        "Generally",
+        "telephone",
+        "began"
+      ],
+      "3": [
+        "--",
+        "\u201d\u2014",
+        "?\u2014",
+        "/",
+        ")\u2014"
+      ],
+      "4": [
+        "via",
+        "plex",
+        "phoned",
+        "\u2014\u00bf",
+        "insofar"
+      ],
+      "5": [
+        "\u65e2\u7136",
+        "priced",
+        "denominated",
+        "specifically",
+        "Precio"
+      ],
+      "6": [
+        "governments",
+        "international",
+        "Country",
+        "internationally",
+        "countries"
+      ],
+      "7": [
+        "country",
+        "international",
+        "economic",
+        "International",
+        "countries"
+      ],
+      "8": [
+        "international",
+        "countries",
+        "nations",
+        "governments",
+        "country"
+      ],
+      "9": [
+        "government",
+        "conom",
+        "Europe",
+        "travel",
+        "country"
+      ],
+      "10": [
+        "Europe",
+        "government",
+        "South",
+        "travel",
+        "country"
+      ],
+      "11": [
+        "United",
+        "government",
+        "Europe",
+        "travel",
+        "country"
+      ],
+      "12": [
+        "import",
+        "ublic",
+        "government",
+        "United",
+        "country"
+      ],
+      "13": [
+        ".${",
+        "foreigners",
+        ".\\",
+        "international",
+        "foreign"
+      ],
+      "14": [
+        "african",
+        "\u0641\u0649",
+        "\u043d\u0430\u0445\u043e\u0434\u0438\u0442\u0441\u044f",
+        "\u7537\u6027",
+        "\u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f"
+      ],
+      "15": [
+        "urrent",
+        "\u3002",
+        "\u0647\u0648",
+        "christmas",
+        "today"
+      ],
+      "16": [
+        "today",
+        "\u0939\u0948",
+        "query",
+        "price",
+        "acter"
+      ],
+      "17": [
+        "price",
+        "government",
+        "anguage",
+        "technology",
+        "today"
+      ],
+      "18": [
+        "international",
+        "countries",
+        "economic",
+        "urrent",
+        "today"
+      ],
+      "19": [
+        "cription",
+        "country",
+        "today",
+        "government",
+        "public"
+      ],
+      "20": [
+        "this",
+        "many",
+        "world",
+        "public",
+        "these"
+      ],
+      "21": [
+        "name",
+        "ublic",
+        "these",
+        "ument",
+        "this"
+      ],
+      "22": [
+        "many",
+        "ument",
+        "this",
+        "different",
+        "ublic"
+      ],
+      "23": [
+        "most",
+        "world",
+        "example",
+        "country",
+        "many"
+      ],
+      "24": [
+        "international",
+        "country",
+        "European",
+        "France",
+        "countries"
+      ],
+      "25": [
+        "international",
+        "country",
+        "European",
+        "France",
+        "countries"
+      ],
+      "26": [
+        "country",
+        "United",
+        "international",
+        "nation",
+        "countries"
+      ],
+      "27": [
+        "United",
+        "country",
+        "USA",
+        "nations",
+        "countries"
+      ],
+      "28": [
+        "countries",
+        "United",
+        "Philippines",
+        "countries",
+        "United"
+      ],
+      "29": [
+        "United",
+        "countries",
+        "United",
+        "pa\u00edses",
+        "Philippines"
+      ],
+      "30": [
+        "United",
+        "Philippines",
+        "United",
+        "countries",
+        "countries"
+      ],
+      "31": [
+        "United",
+        "countries",
+        "United",
+        "Philippines",
+        "country"
+      ],
+      "32": [
+        "United",
+        "United",
+        "eurozone",
+        "countries",
+        "Philippines"
+      ]
+    }
+  }
+}
