@@ -1,0 +1,13 @@
+{
+  "_note": "Part 1 (probing MRR) output from full_rep_qwen v1 kernel that later crashed in Part 2. These numbers are correct; only the causal/truncation/shuffled parts didn't run.",
+  "model": "Qwen/Qwen2.5-3B-Instruct",
+  "lens": "qwen2.5-3b-jlens.pt (25 pile prompts, target_layer=-2, skip_first=4)",
+  "results": {
+    "lens-eval-association":   {"n":  99, "MRR": 0.0056, "top1": 0.0000, "top10": 0.0101},
+    "lens-eval-multihop":      {"n":  84, "MRR": 0.2432, "top1": 0.1548, "top10": 0.4226},
+    "lens-eval-multilingual":  {"n": 107, "MRR": 0.2609, "top1": 0.1861, "top10": 0.4011},
+    "lens-eval-order-ops":     {"n":  55, "MRR": 0.0655, "top1": 0.0273, "top10": 0.1455},
+    "lens-eval-poetry":        {"n":  98, "MRR": 0.3316, "top1": 0.2245, "top10": 0.5510},
+    "lens-eval-typo":          {"n":  96, "MRR": 0.3176, "top1": 0.2188, "top10": 0.5312}
+  }
+}
