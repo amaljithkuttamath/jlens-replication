@@ -43,15 +43,20 @@ For the classic probe *"The number of legs on the animal that spins webs is..."*
 
 ### What this means
 
-Gemma-4 uses **Per-Layer Embeddings (PLE)** — every decoder layer has its own small embedding table that feeds directly into the residual, *bypassing* the standard attention→FFN pathway that the Jacobian lens is defined over.
+The visibility gap is real in the data. What causes it is an open question I don't yet have enough evidence to answer confidently.
 
-Anthropic's paper claims: *"verbalizable representations form a global workspace."* Two small experiments suggest a refinement:
+Gemma-4 differs from Qwen in **at least four ways** that could plausibly matter:
 
-> The workspace exists, but the **J-lens systematically under-reports it in models with per-layer bypass paths.** The tool for measuring the workspace is architecture-sensitive in a way the paper doesn't discuss.
+- **Per-Layer Embeddings (PLE):** an auxiliary 256-dim signal injected into the residual at every layer (adds, doesn't bypass — corrected from an earlier version of this doc)
+- **LAuReL-style modified residual pathways** with `residual_weight=0.5` and per-token low-rank gating
+- **5:1 sliding-window : global hybrid attention** (5 of every 6 layers only see 512 tokens)
+- **Different training data mix and post-training regime** than Qwen 2.5
 
-This isn't "the workspace doesn't exist." It's "the *visibility* of the workspace depends on whether the model routes information exclusively through the residual stream — and modern efficient architectures often don't."
+Any of these, or a combination, could explain why the J-lens reads a wide workspace band on Qwen but a narrow one on Gemma-4. **My honest position is: I don't know which yet.** The clean follow-up experiment is a J-lens on Gemma-3-4B (same family, no PLE, no LAuReL) to isolate the effect. That's a next step, not a claim.
 
-That's the kind of methodological caveat that only becomes visible when someone replicates on a model with a genuinely different architecture. Doing that ends up being cheap: a weekend and $0.
+What I do stand behind: **the J-lens is architecture-sensitive.** If it's going to be used more broadly as an interpretability tool, its behavior on non-standard residual architectures deserves systematic study.
+
+That kind of methodological question only surfaces when someone replicates on a model with a genuinely different architecture. Doing that ends up being cheap: a weekend and $0.
 
 ## Probes in detail
 

@@ -10,8 +10,8 @@
 
 Gemma-4 is the first architecture to combine two things no public J-lens has been fit on:
 
-1. **Per-Layer Embeddings (PLE)** — each decoder layer has its own small embedding table that feeds directly into the residual, bypassing the standard attention→FFN pathway
-2. **5:1 hybrid sliding-window attention** — 5 out of every 6 layers only see the last 512 tokens (local); the 6th sees everything (global)
+1. **Per-Layer Embeddings (PLE)** — an auxiliary residual signal is injected into every decoder layer. Per [HuggingFace's Gemma-4 docs](https://huggingface.co/docs/transformers/en/model_doc/gemma4), PLE combines a token-identity lookup (from a separate 262144-vocab table with `hidden_size_per_layer_input=256`) and a context-aware projection, sums them, scales by `1/√2`, and **adds them into the residual stream at each layer**. It is not a bypass — it augments the residual pathway. (I got this wrong in an earlier version of this file.)
+2. **5:1 hybrid sliding-window attention** — 5 out of every 6 layers only see the last 512 tokens (local); the 6th sees everything (global). Layer types are listed explicitly in `config.text_config.layer_types`.
 
 Anthropic's paper doesn't address either. This run is the first data point on whether the workspace phenomenon survives both.
 
@@ -54,29 +54,29 @@ This is where the finding gets more nuanced. On Qwen 2.5-3B the target concept a
 
 ## What this pattern likely means
 
-Three interpretations, in order of confidence:
+**I don't know for sure.** Below are four candidate explanations, ordered by how much evidence I have for each. Deliberately not picking a winner, because doing that requires follow-up experiments I haven't run.
 
-### 1. PLE architecture systematically hides representations from the residual stream (highest confidence)
+### Candidate 1: Auxiliary PLE signal dilutes the concept representation across dimensions
 
-Per-Layer Embeddings inject content at every layer *outside* the residual read/write pathway. If concepts are stored in PLE lookups rather than the residual, **the J-lens will systematically under-report them.** The evidence:
+PLE injects a 256-dim per-layer signal into a 1536-dim residual (17% of the residual dimension) at every layer. If concept information is now shared across `residual + PLE_lookup + LAuReL-modulated pathway`, projecting the residual alone to vocabulary might miss the fraction of the information that lives in the PLE contribution. The J-lens is defined over the residual stream; it doesn't read the PLE input tensor separately.
 
-- Qwen 2.5-3B (no PLE): concept in top-5 for 20/34 layers
-- Gemma-4-E2B (has PLE): concept in top-5 for 0–2 of 33 layers, but **eval pass@k is HIGHER**
+This is *not* a bypass claim — PLE does enter the residual. But the *rate* at which concept-relevant components enter may be lower than in a pure residual-flow architecture. A vocabulary projection at layer `l` in Gemma-4 sees a running sum that has been mixed with more sources than a comparable Qwen readout.
 
-This is a real, published-worthy limitation of the paper's methodology. When the paper says "verbalizable representations form a global workspace," that only holds for models where representations flow through the residual stream. PLE-augmented models may have workspaces that are just as functional, but partially invisible to the J-lens.
+### Candidate 2: Sliding-window attention prevents workspace-band formation
 
-### 2. The evals score final-position readouts, which behave differently than mid-stream probes
+Gemma-4's `layer_types` alternates 5 local (512-token sliding window) : 1 global. If workspace formation requires global attention to consolidate a mid-stream concept across layers, we'd expect the band to appear preferentially at the 1-in-6 global layers. Looking at the raw probe data for Qwen (dense global attention everywhere) vs Gemma-4 doesn't obviously fit this — Gemma-4 shows `spider` at L6 and L12, neither of which are the 6-mod-1 global layers based on the config. But it's a candidate that a controlled experiment could isolate.
 
-Our eval pass@k measures rank at the last prompt token before the target. Our sanity probes ask: does the concept appear at *any* mid-stream layer? These are different questions.
+### Candidate 3: LAuReL-style modified residual pathways change what the residual carries
 
-In Qwen: mid-stream concept representations bleed into the final position via residual flow, so both signals agree.
-In Gemma-4 with PLE: mid-stream representations may be more compartmentalized, but the final-position gathering still reads them via cross-attention. Hence eval pass@k stays high while mid-stream probe visibility drops.
+Gemma-4 uses [LAuReL](https://arxiv.org/abs/2411.07501)-style modifications: `x_{i+1} = α · x_i + β · layer(x_i) + γ · low_rank_gate(x_i)`. With `residual_weight=0.5` and additional per-token gating, the residual at layer `l` in Gemma-4 is a different-weighted combination of prior signals than in Qwen. The Jacobian `∂h_final / ∂h_l` is still well-defined, but what `h_l` represents differs. This might reduce the signal-to-noise of vocabulary projections without any information actually being hidden.
 
-### 3. The 33% smaller-model / higher-eval result is real
+### Candidate 4: Different training data / fine-tuning objectives
 
-**This is where I'd normally suspect a scoring artifact and refuse to claim it.** But: this is the same code that produced the Qwen results, run on the same lens data with the same tokenization filters. If it's an artifact, it's an artifact that affects Qwen too. And the specific evals where Gemma-4 wins (poetry, multihop, order-ops) require *retrieval-then-composition*, which is exactly what PLE lookups are architecturally designed to accelerate.
+Qwen 2.5-3B-Instruct and Gemma-4-E2B-it are trained on entirely different data mixtures with different post-training regimes. The visibility gap could reflect training decisions, not architectural ones. The clean way to isolate architecture from training is a J-lens on the base (not instruct) checkpoints, plus J-lens on Gemma-3-4B (no PLE, no LAuReL) for a within-family control.
 
-**The plausible interpretation: PLE trades residual-stream visibility for retrieval efficiency, and it wins on tasks that value retrieval.**
+### What would resolve this
+
+One experiment settles it: **fit a J-lens on Gemma-3-4B** (same family, no PLE, standard residual). If it shows a Qwen-like wide band, PLE + LAuReL is the cause. If it shows a Gemma-4-like narrow band, something in Google's training pipeline is the cause. Either way, we'd know.
 
 ## Limitations (same as before, plus new ones)
 
@@ -85,14 +85,17 @@ Everything in [RESULTS.md § Limitations](./RESULTS.md#limitations-you-must-know
 - **Torch dynamo hit recompile limits** during fit (`torch._dynamo hit config.recompile_limit (8)`) — some layers fell back to eager mode. This *shouldn't* affect the fitted Jacobians (they're mathematically defined regardless of the execution path), but it's a note
 - **The E2B result may not extrapolate to E4B.** E4B has 2× the PLE table size relative to residual dim; visibility drop could be worse or better
 - **No shuffled control on Gemma-4 either.** Same missing methodology gap as with Qwen
+- **My earlier framing was wrong.** I initially described PLE as a "bypass path" that routes information around the residual stream. That was architecturally incorrect. Per HuggingFace's official Gemma-4 docs, PLE feeds an *auxiliary signal into* the residual at every layer — it augments, doesn't bypass. Every reference to "bypass" in earlier versions of this file (and the LinkedIn post I initially drafted) was wrong. Corrected.
 
 ## What both results together tell us
 
 The best summary is not "Gemma wins" or "Qwen wins" — it's:
 
-> **The J-lens methodology is architecture-sensitive. On models with pure residual-stream information flow (Qwen 2.5), it produces wide, visible workspace bands. On models with per-layer bypass paths (Gemma-4 PLE), it under-reports mid-stream concept representations even when the model performs better on the underlying evals.**
+> **The J-lens is architecture-sensitive.** On dense residual-flow models (Qwen 2.5-3B), the workspace band is wide and easy to read. On models with modified residual pathways (Gemma-4-E2B: PLE + LAuReL + hybrid sliding-window attention), the same probes show the target concept in far fewer layers, even though the model outperforms Qwen on the underlying evaluations.
 
-That is the actually-interesting finding. It's a caveat on Anthropic's original paper: the workspace exists, but its *visibility to the Jacobian lens* depends on whether the model routes information exclusively through the residual stream.
+I can't yet say **which** of PLE, LAuReL, sliding-window attention, or training-pipeline differences is responsible. That's a follow-up experiment, most cleanly resolved by comparing Gemma-3-4B (no PLE, no LAuReL, dense attention) against Gemma-4-E2B within the same model family.
+
+What I do stand behind: **the visibility gap is real in the data**, and if the J-lens is going to be used more widely as an interpretability tool, its behavior on modern non-standard residual architectures deserves systematic study.
 
 ## Reproducing
 
