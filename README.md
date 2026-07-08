@@ -2,7 +2,7 @@
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/amaljithkuttamath/jlens-replication/blob/main/notebooks/02_fit_colab.ipynb)
 
-> **Results are in for Qwen 2.5-3B — read the writeup: [RESULTS.md](./RESULTS.md)**
+> **Results are in for two models — [RESULTS.md](./RESULTS.md) (Qwen 2.5-3B) and [RESULTS_gemma4.md](./RESULTS_gemma4.md) (Gemma-4-E2B PLE architecture)**
 
 
 A minimal, free-compute replication of Anthropic's July 2026 paper
