@@ -2,6 +2,8 @@
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/amaljithkuttamath/jlens-replication/blob/main/notebooks/02_fit_colab.ipynb)
 
+> **Results are in for Qwen 2.5-3B — read the writeup: [RESULTS.md](./RESULTS.md)**
+
 
 A minimal, free-compute replication of Anthropic's July 2026 paper
 **["Verbalizable Representations Form a Global Workspace in Language Models"](https://transformer-circuits.pub/2026/workspace/index.html)**
